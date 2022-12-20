@@ -14,28 +14,24 @@
           <div class="col-4">     
           </div>
           <div class="col-4">
-            <div class="login-detail">
-                <div class="input-group">
-                    <input type="text" id="username" name="username"
-                           class="form-control input-height input-form"
-                           placeholder="帳號 / Account"
-                           autofocus="">
+            <form>
+                <div class="mb-3">
+                  <label for="Account" class="form-label">帳號</label>
+                  <input type="account" class="form-control" id="account" placeholder="帳號 / Account">
                 </div>
-                <div class="input-group">
-                    <input type="password" id="password" name="password"
-                           class="form-control input-height input-form"
-                           placeholder="密碼 / Password">
+                <div class="mb-3">
+                  <label for="Password" class="form-label">密碼</label>
+                  <input type="password" class="form-control" id="password" placeholder="密碼 / Password">
                 </div>
-                <div class="input-group">
-                    <button class="btn btn-sm btn-primary btn-block btn-login input-height font16"
-                            type="button" name="login" onclick="location.href='./user.html'">
-                        登入 / Login
-                    </button>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="check">
+                  <label class="form-check-label" for="check">記住帳密</label>
                 </div>
-            </div>         
+                <button type="button" class="btn btn-primary" onclick="location.href='./user.html'">登入 / Login</button>
+              </form>
           </div>
-          <div class="col-4">      
-          </div>
+          <!-- <div class="col-4">      
+          </div> -->
         </div>
       </div>
 </body>
