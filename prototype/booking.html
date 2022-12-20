@@ -14,7 +14,7 @@
           <div class="col-2">
             <nav>
                 <a href="./user.html">回使用者主頁</a><br>
-                <a href="./booking.html">預訂會議</a><br>
+                <a href="./booking.html">預定會議</a><br>
                 <a href="./join.html">加入會議</a>
             </nav>
           </div>
@@ -28,13 +28,29 @@
             <input type="text" name="會議名稱"
                            placeholder="請輸入會議描述">
             <br>
-            排定日期:
-            <input type="text" name="會議日期"
-                           placeholder="請輸入會議日期">
+            排定開始日期:
+            <input type="date" name="會議日期">
+            <input type="time" name="會議時間">
+            <br>
+            排定結束日期:
+            <input type="date" name="會議日期">
+            <input type="time" name="會議時間">
             <br>
             會議設定:
             <br>
-            載入參與名單:
+            載入參與名單(按住Ctrl多選):
+              <select multiple size="">
+                <optgroup label="資工三甲">
+                  <option value="3A">資工三甲</option>
+                  <option value="3AG1">資工三甲第一組</option>
+                  <option value="3AG2">資工三甲第二組</option>
+                </optgroup>
+                <optgroup label="資工三乙">
+                  <option value="3B">資工三乙</option>
+                  <option value="3BG1">資工三乙第一組</option>
+                  <option value="3BG2">資工三乙第二組</option>
+                </optgroup>
+              </select>
             <br>
             <button class="btn btn-sm btn-primary btn-block btn-login input-height font16"
                     type="button" name="建立會議" onclick="location.href=''">
