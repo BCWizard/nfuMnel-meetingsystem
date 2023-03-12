@@ -1,3 +1,13 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    header("location: user.html");
+    exit;  //記得要跳出來，不然會重複轉址過多次
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,20 +24,20 @@
           <div class="col-4">     
           </div>
           <div class="col-4">
-            <form>
+            <form method="post" action="login.php">
                 <div class="mb-3">
                   <label for="Account" class="form-label">帳號</label>
-                  <input type="account" class="form-control" id="account" placeholder="帳號 / Account">
+                  <input type="account" class="form-control" name = "account" id="account" placeholder="帳號 / Account">
                 </div>
                 <div class="mb-3">
                   <label for="Password" class="form-label">密碼</label>
-                  <input type="password" class="form-control" id="password" placeholder="密碼 / Password">
+                  <input type="password" class="form-control" name = "password" id="password" placeholder="密碼 / Password">
                 </div>
                 <div class="mb-3 form-check">
                   <input type="checkbox" class="form-check-input" id="check">
                   <label class="form-check-label" for="check">記住帳密</label>
                 </div>
-                <button type="button" class="btn btn-primary" onclick="location.href='./user.html'">登入 / Login</button>
+                <button type="submit" class="btn btn-primary">登入 / Login</button>
               </form>
           </div>
           <!-- <div class="col-4">      
