@@ -1,10 +1,3 @@
-<?php 
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if(!(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)){
-    header("location: loginpage.php");
-    exit;  //記得要跳出來，不然會重複轉址過多次
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,13 +15,13 @@ if(!(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)){
             <nav class="navbar justify-content-center navbar-light bg-light">
               <ul class="navbar-nav">
                   <li class="nav-item">
-                      <a class="nav-link" href="./user.html">回使用者主頁</a>
+                      <a class="nav-link" href="./user.php">回使用者主頁</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="./booking.html">預定會議</a>
+                      <a class="nav-link" href="./booking.php">預定會議</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="./join.html">加入會議</a>
+                      <a class="nav-link" href="./join.php">加入會議</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="./logout.php">登出</a>
