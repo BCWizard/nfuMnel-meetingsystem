@@ -18,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         //這些是之後可以用到的變數
         $_SESSION["id"] = mysqli_fetch_assoc($result)["id"];
         $_SESSION["account"] = mysqli_fetch_assoc($result)["account"];
-        header("location:user.html");
+        header("location:user.php");
     }else{
             function_alert("帳號或密碼錯誤"); 
     }
