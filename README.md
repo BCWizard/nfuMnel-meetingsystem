@@ -3,8 +3,9 @@
 * HTML,CSS,Bootstrap:  
     * [CSScoke。金魚都能懂的網頁設計入門。YouTube](https://www.youtube.com/playlist?list=PLqivELodHt3iL9PgGHg0_EF86FwdiqCre)
 * PHP,登入功能:  
-    * [Chia Chen。PHP-MySQL系列 登入與註冊系統。GitHub](https://jam68ty.github.io/BucketTalk/post/php-mysql-login/)  
     * 吳弘凱(2016)。實戰PHP7+MySQL:從0開始寫出自己想要寫的程式。松崗資產管理。
+    * [Chia Chen。PHP-MySQL系列 登入與註冊系統。GitHub](https://jam68ty.github.io/BucketTalk/post/php-mysql-login/)  
+    * [蔡承洋。2017 105下 動態網頁設計 php mysql。YouTube](https://youtube.com/playlist?list=PLwIFDX7xv6k3RkPprgn_LRsODCVr9a-H7)  
 * Git,Github:  
     * [走歪的工程師James。git教學系列。YouTube](https://www.youtube.com/playlist?list=PLz-S_Wd1N3svV8XnuDM6CPaTCtQkk5SY4)
 ## 文件  

@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION["loggedin"]) == 0){
+    header("location: loginpage.php");
+    exit;  //記得要跳出來，不然會重複轉址過多次
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
