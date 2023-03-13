@@ -1,4 +1,4 @@
-# NFU_MNEL_IndependentStudy
+# nfuMnel-IndependentStudy-MeetingSystem
 ## Reference  
 * HTML,CSS,Bootstrap:  
     * [CSScoke。金魚都能懂的網頁設計入門。YouTube](https://www.youtube.com/playlist?list=PLqivELodHt3iL9PgGHg0_EF86FwdiqCre)

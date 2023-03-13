@@ -10,7 +10,7 @@ $password_hash=password_hash($password,PASSWORD_DEFAULT);
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $sql = "SELECT * FROM userinformation WHERE userAccount ='".$account."'";
-    $result=mysqli_query($conn,$sql);
+    $result=mysqli_query($conn,$sql);           //connection,query(查詢字串);回傳result
     if(mysqli_num_rows($result)==1 && $password==mysqli_fetch_assoc($result)["userPassword"]){
         session_start();
         // Store data in session variables
@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         header("location:user.html");
     }else{
             function_alert("帳號或密碼錯誤"); 
-        }
+    }
 }
 else{
     function_alert("Something wrong"); 
@@ -31,7 +31,6 @@ else{
     mysqli_close($link);
 
 function function_alert($message) { 
-      
     // Display the alert box  
     echo "<script>alert('$message');
      window.location.href='loginpage.php';

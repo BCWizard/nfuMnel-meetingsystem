@@ -31,7 +31,7 @@ if(!(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)){
                       <a class="nav-link" href="./join.html">加入會議</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="./loginout.php">登出</a>
+                    <a class="nav-link" href="./logout.php">登出</a>
                   </li>
               </ul>
             </nav>
