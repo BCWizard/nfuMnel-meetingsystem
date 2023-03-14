@@ -1,8 +1,9 @@
 <?php
 session_start();
+//未建立session -> 跳至loginpage.php
 if(isset($_SESSION["loggedin"]) == 0){
     header("location: loginpage.php");
-    exit;  //記得要跳出來，不然會重複轉址過多次
+    exit;
 }
 ?>
 <!DOCTYPE html>
@@ -91,6 +92,9 @@ if(isset($_SESSION["loggedin"]) == 0){
             </button>
           </div>
           <div class="col-2">
+            <?php
+              echo "Hi, {$_SESSION['userName']}";
+            ?>
           </div>
         </div>
       </div>

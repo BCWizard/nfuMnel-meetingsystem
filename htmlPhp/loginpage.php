@@ -1,11 +1,10 @@
 <?php
-// Initialize the session
 session_start();
  
-// Check if the user is already logged in, if yes then redirect him to welcome page
+//已建立session -> 跳至user.php
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: user.php");
-    exit;  //記得要跳出來，不然會重複轉址過多次
+    exit;
 }
 ?>
 <!DOCTYPE html>

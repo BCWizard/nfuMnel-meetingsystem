@@ -1,6 +1,4 @@
 <?php 
 session_start(); 
-$_SESSION = array(); 
 session_destroy(); 
-header('location:loginpage.php'); 
-?>
+header('location:loginpage.php');
