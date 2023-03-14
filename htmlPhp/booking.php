@@ -6,7 +6,7 @@ if(isset($_SESSION["loggedin"]) == 0){
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-TW">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@ if(isset($_SESSION["loggedin"]) == 0){
     <script src="js/bootstrap.min.js"></script>
     <div class="container">
         <div class="row">
-          <div class="col-2">
+          <div class="col-md-2">
             <nav class="navbar justify-content-center navbar-light bg-light">
               <ul class="navbar-nav">
                   <li class="nav-item">
@@ -36,7 +36,7 @@ if(isset($_SESSION["loggedin"]) == 0){
               </ul>
             </nav>
           </div>
-          <div class="col-8">
+          <div class="col-md-8">
             <h1>預定會議</h1>
             <div class="input-group mb-3">
               <span class="input-group-text" id="inputGroup-sizing-default">會議名稱:</span>
@@ -85,33 +85,13 @@ if(isset($_SESSION["loggedin"]) == 0){
                 </optgroup>
               </select>
             </div>
-            
-            <!-- 載入參與名單(按住Ctrl多選):
-              <select multiple size="">
-                <optgroup label="資工三甲">
-                  <option value="3A">資工三甲</option>
-                  <option value="3AG1">資工三甲第一組</option>
-                  <option value="3AG2">資工三甲第二組</option>
-                </optgroup>
-                <optgroup label="資工三乙">
-                  <option value="3B">資工三乙</option>
-                  <option value="3BG1">資工三乙第一組</option>
-                  <option value="3BG2">資工三乙第二組</option>
-                </optgroup>
-              </select>
-            <br> -->
             <button class="btn btn-sm btn-primary btn-block btn-login input-height font16"
                     type="button" name="建立會議" onclick="location.href=''">
                 點我創建!
             </button>
           </div>
-          <!-- <div class="col-2">
-            <nav>
-                <h1>會議</h1>
-                <a href="./booking.html">預定會議</a><br>
-                <a href="./join.html">加入會議</a>
-            </nav>   
-          </div> -->
+          <div class="col-2">
+          </div>
         </div>
       </div>
 </body>

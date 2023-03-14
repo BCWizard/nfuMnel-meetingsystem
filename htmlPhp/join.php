@@ -6,7 +6,7 @@ if(isset($_SESSION["loggedin"]) == 0){
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-TW">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@ if(isset($_SESSION["loggedin"]) == 0){
     <script src="js/bootstrap.min.js"></script>
     <div class="container">
         <div class="row">
-          <div class="col-2">
+          <div class="col-md-2">
             <nav class="navbar justify-content-center navbar-light bg-light">
               <ul class="navbar-nav">
                   <li class="nav-item">
@@ -36,7 +36,7 @@ if(isset($_SESSION["loggedin"]) == 0){
               </ul>
             </nav>
           </div>
-          <div class="col-8">
+          <div class="col-md-8">
             <h1>加入會議</h1>
             <input type="text" name="加入會議"
                            placeholder="請輸入會議代碼/連結">
@@ -45,13 +45,8 @@ if(isset($_SESSION["loggedin"]) == 0){
                 點我加入!
             </button>
           </div>
-          <!-- <div class="col-2">
-            <nav>
-                <h1>會議</h1>
-                <a href="./booking.html">預定會議</a><br>
-                <a href="./join.html">加入會議</a>
-            </nav>   
-          </div> -->
+          <div class="col-md-2">
+          </div>
         </div>
       </div>
 </body>

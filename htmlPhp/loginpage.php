@@ -9,21 +9,21 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant-TW">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>具智慧化行為分析的會議系統首頁</title>
+    <title>會議系統登入頁面</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
     <script src="js/bootstrap.min.js"></script>
-    <div class="container">
+    <div class="container">                                                               <!--max 1170px-->
         <div class="row">
-          <div class="col-4">     
+          <div class="col-md-4">                                                          <!--992~1200px -> 使用4欄位-->    
           </div>
-          <div class="col-4">
+          <div class="col-md-4">
             <form method="post" action="login.php">
                 <div class="mb-3">
                   <label for="Account" class="form-label">帳號</label>
@@ -40,8 +40,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 <button type="submit" class="btn btn-primary">登入 / Login</button>
               </form>
           </div>
-          <!-- <div class="col-4">      
-          </div> -->
+          <div class="col-md-4">      
+          </div>
         </div>
       </div>
 </body>

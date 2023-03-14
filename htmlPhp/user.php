@@ -5,8 +5,8 @@ if(isset($_SESSION["loggedin"]) == 0){
     exit;  //記得要跳出來，不然會重複轉址過多次
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>                                                                           <!--HTML 5 文件格式宣告-->
+<html lang="zh-Hant-TW">                                                                  
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@ if(isset($_SESSION["loggedin"]) == 0){
     <script src="js/bootstrap.min.js"></script>
     <div class="container">
         <div class="row">
-          <div class="col-2">
+          <div class="col-md-2">
             <nav class="navbar justify-content-center navbar-light bg-light">
               <ul class="navbar-nav">
                   <li class="nav-item">
@@ -36,7 +36,7 @@ if(isset($_SESSION["loggedin"]) == 0){
               </ul>
             </nav>
           </div>
-          <div class="col-8">
+          <div class="col-md-8">
             <h1>歷史會議列表</h1>
             <table class="table table-success table-striped">
               <thead>
@@ -138,53 +138,9 @@ if(isset($_SESSION["loggedin"]) == 0){
                   </tr>
               </tbody>
             </table>
-                <!-- 
-                <table>
-                    <tr>
-                      <td>會議名稱</td>
-                      <td>日期</td>
-                      <td>主辦單位</td>
-                      <td>主辦人</td>
-                    </tr>
-                    <tr>
-                      <td>中文(一)</td>
-                      <td>2022/12/1</td>
-                      <td>通識教育中心</td>
-                      <td>莊怡文</td>
-                    </tr>
-                    <tr>
-                      <td>英文(一)</td>
-                      <td>2022/12/2</td>
-                      <td>語言教學中心</td>
-                      <td>張敏慧</td>
-                    </tr>
-                    <tr>
-                        <td>通識1</td>
-                        <td>2022/12/3</td>
-                        <td>通識教育中心</td>
-                        <td>方俊源</td>
-                      </tr>
-                      <tr>
-                        <td>安全程式設計</td>
-                        <td>2022/12/4</td>
-                        <td>多媒體網路實驗室</td>
-                        <td>林易泉</td>
-                      </tr>
-                      <tr>
-                        <td>3D列印切片應用</td>
-                        <td>2022/12/4</td>
-                        <td>中部創新自造教育基地</td>
-                        <td>DreamMaker</td>
-                      </tr>
-                  </table> -->
           </div>
-          <!-- <div class="col-2">
-            <nav>
-                <h1>會議</h1>
-                <a href="./booking.html">預定會議</a><br>
-                <a href="./join.html">加入會議</a>
-            </nav>   
-          </div> -->
+          <div class="col-2">
+          </div>
         </div>
       </div>
 </body>
