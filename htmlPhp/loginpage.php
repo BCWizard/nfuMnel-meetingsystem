@@ -2,11 +2,38 @@
 session_start();
  
 //已建立session -> 跳至user.php
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: user.php");
-    exit;
+if(isset($_SESSION["userAccount"])){
+    //檢查權限
+    $conn=require_once "config.php";
+    $sql = "SELECT * FROM userLoginInfo WHERE userAccount = '{$_SESSION["userAccount"]}'";          //帳號相同者
+    $result=mysqli_query($conn,$sql);                                                               //connection,query(查詢字串);回傳result
+    $data = mysqli_fetch_assoc($result);
+
+    switch($data["userPermission"]){
+      case 0:                                                             //admin
+          header("location:./Manager/managerUserPage.php");
+          break;
+      case 1:                                                             //teacher
+          header("location:user.php");
+          break;
+      case 2:                                                             //student
+          header("location:user.php");
+          break;
+      default:                                                            //尚未定義權限
+          function_alert("Who are you???");
+          break;
+  }
+
+    function function_alert($message) { 
+    // Display the alert box  
+    echo "<script>alert('$message');
+    window.location.href='loginpage.php';
+    </script>"; 
+    return false;
+    }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
 <head>
@@ -37,7 +64,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                   <label class="form-check-label" for="check">記住帳密</label>
                 </div>
                 <button type="submit" class="btn btn-primary">登入 / Login</button>
-              </form>
+            </form>
           </div>
           <div class="col-md-4">      
           </div>

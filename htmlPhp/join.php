@@ -1,7 +1,7 @@
 <?php
 session_start();
 //未建立session -> 跳至loginpage.php
-if(isset($_SESSION["loggedin"]) == 0){
+if(isset($_SESSION["userAccount"]) == 0){
     header("location: loginpage.php");
     exit;
 }
@@ -48,7 +48,7 @@ if(isset($_SESSION["loggedin"]) == 0){
           </div>
           <div class="col-md-2">
             <?php
-              echo "Hi, {$_SESSION['userName']}";
+              echo "Hi, {$_SESSION['userAccount']}";
             ?>
           </div>
         </div>
