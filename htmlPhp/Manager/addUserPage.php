@@ -58,7 +58,7 @@ function function_alert($message) {
 
           <div class="col-md-8">
             <h1>新增使用者</h1>
-            <form method="post" action="addUser.php">
+            <form method="post" enctype="multipart/form-data" action="addUser.php">
                 <div class="mb-3">
                   <label for="Account" class="form-label">帳號</label>
                   <input type="account" class="form-control" name = "account" id="account" placeholder="帳號 / Account">
