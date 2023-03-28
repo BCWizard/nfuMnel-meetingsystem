@@ -37,7 +37,7 @@ function function_alert($message) {
     <script src="../js/bootstrap.min.js"></script>
     <div class="container">
         <div class="row">
-        <div class="col-md-2">
+          <div class="col-md-2">
             <nav class="navbar justify-content-center navbar-light bg-light">
               <ul class="navbar-nav">
                   <li class="nav-item">
@@ -63,22 +63,27 @@ function function_alert($message) {
                   <label for="Account" class="form-label">帳號</label>
                   <input type="account" class="form-control" name = "account" id="account" placeholder="帳號 / Account">
                 </div>
-                <div class="mb-3">
-                  <label for="Password" class="form-label">密碼</label>
-                  <input type="password" class="form-control" name = "password" id="password" placeholder="密碼 / Password">
-                </div>
-                  <select name="premission" class="form-select" aria-label="Default select example">
-                    <option selected>選擇使用者權限</option>
-                    <option value="0">管理者</option>
-                    <option value="1">老師</option>
-                    <option value="2">學生</option>
-                  </select>
-                </div>
-                <button type="submit" class="btn btn-primary">新增</button>
+                <button type="submit" class="btn btn-primary">刪除</button>
             </form>
           </div>
           
-          <div class="col-2">
+          <div class="col-md-2">
+            <img src="
+            <?php
+              //$conn=require_once "../config.php";
+              $sql = "SELECT * FROM userInfo WHERE userAccount ='{$_SESSION["userAccount"]}'";
+              $result=mysqli_query($conn,$sql);                                                               //connection,query(查詢字串);回傳result
+              $data = mysqli_fetch_assoc($result);
+                                                //userInfo資料表裡是否有使用者圖片
+              if(!is_null($data["userImage"])){
+                $userImagePath = "./userImage/{$_SESSION['userAccount']}.jpg";
+                echo $userImagePath;
+              }else{                            //沒有則使用預設圖片
+                $userImagePath = "./userImage/default.png";
+                echo $userImagePath;
+              }
+            ?>
+            " class="img-fluid" alt="使用者圖片">
             <?php
               echo "Hi, {$_SESSION['userAccount']}";
             ?>

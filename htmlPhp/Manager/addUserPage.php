@@ -11,7 +11,7 @@ $conn=require_once "../config.php";
     $result=mysqli_query($conn,$sql);                                                               //connection,query(查詢字串);回傳result
     $data = mysqli_fetch_assoc($result);
 if(mysqli_num_rows($result)==1 && 0==$data["userPermission"]){                          //權限符合
-
+  
 }else{                                                                                  //權限不符合
   function_alert("權限不符合!");
 }
@@ -97,6 +97,22 @@ function function_alert($message) {
           </div>
           
           <div class="col-2">
+            <img src="
+            <?php
+              //$conn=require_once "../config.php";
+              $sql = "SELECT * FROM userInfo WHERE userAccount ='{$_SESSION["userAccount"]}'";
+              $result=mysqli_query($conn,$sql);                                                               //connection,query(查詢字串);回傳result
+              $data = mysqli_fetch_assoc($result);
+                                                //userInfo資料表裡是否有使用者圖片
+              if(!is_null($data["userImage"])){
+                $userImagePath = "./userImage/{$_SESSION['userAccount']}.jpg";
+                echo $userImagePath;
+              }else{                            //沒有則使用預設圖片
+                $userImagePath = "./userImage/default.png";
+                echo $userImagePath;
+              }
+            ?>
+            " class="img-fluid" alt="使用者圖片">
             <?php
               echo "Hi, {$_SESSION['userAccount']}";
             ?>
