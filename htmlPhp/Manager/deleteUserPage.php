@@ -63,7 +63,7 @@ function function_alert($message) {
                   <label for="Account" class="form-label">帳號</label>
                   <input type="account" class="form-control" name = "account" id="account" placeholder="帳號 / Account">
                 </div>
-                <button type="submit" class="btn btn-primary">刪除</button>
+                <button type="submit" class="btn btn-danger">刪除</button>
             </form>
           </div>
           
@@ -79,7 +79,7 @@ function function_alert($message) {
                 $userImagePath = "./userImage/{$_SESSION['userAccount']}.jpg";
                 echo $userImagePath;
               }else{                            //沒有則使用預設圖片
-                $userImagePath = "./userImage/default.png";
+                $userImagePath = "./userImage/default.jpg";
                 echo $userImagePath;
               }
             ?>

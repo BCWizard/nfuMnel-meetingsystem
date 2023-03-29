@@ -71,7 +71,7 @@ function function_alert($message) {
                 $userImagePath = "./userImage/{$_SESSION['userAccount']}.jpg";
                 echo $userImagePath;
               }else{                            //沒有則使用預設圖片
-                $userImagePath = "./userImage/default.png";
+                $userImagePath = "./userImage/default.jpg";
                 echo $userImagePath;
               }
             ?>

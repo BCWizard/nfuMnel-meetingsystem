@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2023-03-27 19:42:35
+-- 產生時間： 2023-03-29 11:15:33
 -- 伺服器版本： 10.4.27-MariaDB
 -- PHP 版本： 8.0.25
 
@@ -40,10 +40,10 @@ CREATE TABLE `userinfo` (
 --
 
 INSERT INTO `userinfo` (`userAccount`, `userName`, `userEmail`, `userClass`, `userImage`) VALUES
-('40943218', '陳瑞鑫', '40943218@nfumail', 'csie2B', NULL),
-('40943220', '陳懋昕', '40943220@nfumail', 'csie2B', NULL),
+('40943218', '陳瑞鑫', '40943218@nfumail', 'csie3B', 'userImage/40943218.jpg'),
+('40943220', '陳懋昕', '40943220@nfumail', 'csie3B', 'userImage/40943220.jpg'),
 ('40943257', '蘇偉勝', '40943257@nfumail', 'csie3B', 'userImage/40943257.jpg'),
-('40943258', '蘇富羿', '40943258@nfumail', 'csie3B', NULL),
+('40943258', '蘇富羿', '40943258@nfumail', 'csie3B', 'userImage/40943258.jpg'),
 ('root', '管理者', 'root@nfumail', 'classRoot', NULL);
 
 -- --------------------------------------------------------
@@ -63,10 +63,10 @@ CREATE TABLE `userlogininfo` (
 --
 
 INSERT INTO `userlogininfo` (`userAccount`, `userPassword`, `userPermission`) VALUES
-('40943218', '$2y$10$7lN6B2x8ORVt4ngYTmuwtOHpeV0R01wT8iiN8H0AYBtW4/gSuFUsy', 2),
-('40943220', '$2y$10$m.IHkHCst6TPwJuuDtwxEe2yqQ9Il0HR6zzbIK0LRMMyE6VwrsGcy', 2),
-('40943257', '$2y$10$Q8UdZQjsSTmEQhA6EU2TN.Z9DQ8TiwLLcnRUfikyp6qL8gvNvQVvm', 2),
-('40943258', '$2y$10$OI7ocOvMh8oK6Hfoxt4Jf.5axCoLi9b8wx1IEv0.I7k75Hnt9hpA2', 2),
+('40943218', '$2y$10$/i6zt5cqr.H0kQl9m.k97eB2lGQOTGV6fguFn2oJJGtMECDI.BqTC', 2),
+('40943220', '$2y$10$v7TG.UFcA0pCnE7IG3V.WuQdgsXIifiCXasutOOwG.PkMZqv86Tb6', 2),
+('40943257', '$2y$10$uj9pviOyT//AbECUaXYOiezcmn1ewOZV.z2FOStK3VneZYE6svfxq', 2),
+('40943258', '$2y$10$1JlZKvlDEtVVjuB1HsfGmegAlUX1xWTd46mrIx315MiD0FakIf2W6', 2),
 ('root', '$2y$10$l0wdPVWSM2GsVzC1fZ62qOtxiUDiRxPMx27BHVrxhsMd7yash1AoO', 0);
 
 --

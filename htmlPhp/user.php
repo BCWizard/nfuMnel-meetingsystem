@@ -152,7 +152,7 @@ if(isset($_SESSION["userAccount"]) == 0){
                 $userImagePath = "./Manager/userImage/{$_SESSION['userAccount']}.jpg";
                 echo $userImagePath;
               }else{                            //沒有則使用預設圖片
-                $userImagePath = "./Manager/userImage/default.png";
+                $userImagePath = "./Manager/userImage/default.jpg";
                 echo $userImagePath;
               }
             ?>
