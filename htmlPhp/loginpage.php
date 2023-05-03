@@ -42,15 +42,29 @@ if(isset($_SESSION["userAccount"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>會議系統登入頁面</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="webCSS/style.css">
+    <!--
+    <style type="text/css">
+      body{
+        background-color: #cccccc;
+      }
+    </style>-->
 </head>
 <body>
     <script src="js/bootstrap.min.js"></script>
+
+    <div class="container">
+      <div class="row">
+        <img src="webImage/meeting-title.jpg" alt = "具智慧化行為分析的會議系統" height=250>
+      </div>
+    </div>
+
     <div class="container">                                                               <!--max 1170px-->
         <div class="row">
           <div class="col-md-4">                                                          <!--992~1200px -> 使用4欄位-->    
           </div>
           <div class="col-md-4">
-            <form method="post" action="login.php">
+            <form method="post" action="login.php" id="loginForm">
                 <div class="mb-3">
                   <label for="Account" class="form-label">帳號</label>
                   <input type="account" class="form-control" name = "account" id="account" placeholder="帳號 / Account">
@@ -66,9 +80,17 @@ if(isset($_SESSION["userAccount"])){
                 <button type="submit" class="btn btn-primary">登入 / Login</button>
             </form>
           </div>
-          <div class="col-md-4">      
+          <div class="col-md-4"> 
           </div>
         </div>
+    </div>
+
+    <div class="container">
+      <div id="systemContactInfo">
+        <div>具智慧化行為分析的會議系統</div>
+        <div>聯絡資訊:MNELMeetingsystem@nfu.edu.tw</div>
+        <div>製作者:陳瑞鑫，陳懋昕，蘇偉勝，蘇富羿</div>
       </div>
+    </div>
 </body>
 </html>
