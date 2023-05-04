@@ -13,10 +13,10 @@ $conn=require_once "../config.php";
 if(mysqli_num_rows($result)==1 && 0==$data["userPermission"]){                          //權限符合
 
 }else{                                                                                  //權限不符合
-  function_alert("權限不符合!");
+  function_permissionAlert("權限不符合!");
 }
 
-function function_alert($message) { 
+function function_permissionAlert($message) { 
   // Display the alert box  
   echo "<script>alert('$message');
    window.location.href='../loginpage.php';
