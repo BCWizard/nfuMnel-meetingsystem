@@ -17,3 +17,7 @@ body{
 #loginForm{
     padding: 30px;
 }
+
+#loginbtn{
+    text-align: center;             /*按鈕置中*/
+}

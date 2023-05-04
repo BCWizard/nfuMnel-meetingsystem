@@ -43,19 +43,13 @@ if(isset($_SESSION["userAccount"])){
     <title>會議系統登入頁面</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="webCSS/style.css">
-    <!--
-    <style type="text/css">
-      body{
-        background-color: #cccccc;
-      }
-    </style>-->
 </head>
 <body>
     <script src="js/bootstrap.min.js"></script>
 
     <div class="container">
       <div class="row">
-        <img src="webImage/meeting-title.jpg" alt = "具智慧化行為分析的會議系統" height=250>
+        <img src="webImage/meeting-title.jpg" alt = "具智慧化行為分析的會議系統title" height=250>
       </div>
     </div>
 
@@ -77,7 +71,9 @@ if(isset($_SESSION["userAccount"])){
                   <input type="checkbox" class="form-check-input" id="check">
                   <label class="form-check-label" for="check">記住帳密</label>
                 </div>
-                <button type="submit" class="btn btn-primary">登入 / Login</button>
+                <div id="loginbtn">
+                  <button type="submit" class="btn btn-primary">登入 / Login</button>
+                </div>
             </form>
           </div>
           <div class="col-md-4"> 
