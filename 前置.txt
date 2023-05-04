@@ -1,0 +1,7 @@
+httpd.conf
+	<1>關閉目錄顯示
+		找到
+			Options Indexes FollowSymLinks Includes ExecCGI
+		改為
+			#Options Indexes FollowSymLinks Includes ExecCGI
+				Options -Indexes
