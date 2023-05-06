@@ -5,3 +5,12 @@ httpd.conf
 		改為
 			#Options Indexes FollowSymLinks Includes ExecCGI
 				Options -Indexes
+Mail
+	以學校為例:
+	Host		'nfu.edu.tw'
+	Username	學號
+	Password	密碼
+	SMTPSecure	ssl
+	Port		465
+	setFrom	學號@nfu.edu.tw
+	addAddress	收信信箱
