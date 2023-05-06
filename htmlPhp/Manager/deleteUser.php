@@ -14,17 +14,7 @@ if(mysqli_num_rows($result)==1 && 0==$data["userPermission"]){                  
   
 }else{                                                                                  //權限不符合
     function_permissionAlert("權限不符合!");
-}
-
-function function_permissionAlert($message) { 
-  // Display the alert box  
-  echo "<script>alert('$message');
-   window.location.href='../loginpage.php';
-  </script>"; 
-  return false;
-}
-$conn=require_once "../config.php";
- 
+} 
 $account=$_POST["account"];
                                             //刪除userInfo
 $sql = "DELETE FROM userInfo WHERE userAccount = '{$account}'";
@@ -40,6 +30,13 @@ if(mysqli_query($conn,$sql)){               //刪除userLoginInfo
 }
 else{                                           //刪除userLoginInfo錯誤!
     function_alert("刪除userLoginInfo錯誤!"); 
+}
+function function_permissionAlert($message) { 
+    // Display the alert box  
+    echo "<script>alert('$message');
+     window.location.href='../loginpage.php';
+    </script>"; 
+    return false;
 }
                                             //跳窗訊息 header:addUserPage.php
 function function_alert($message) { 

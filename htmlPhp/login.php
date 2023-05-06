@@ -4,8 +4,10 @@ $conn=require_once "config.php";
  
 $account=$_POST["account"];
 $password=$_POST["password"];
+//$setRememberLoginInfo=$_POST["setRememberLoginInfo"];
 //hash 19.1
 $password_hash=password_hash($password,PASSWORD_DEFAULT);
+
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     $sql = "SELECT * FROM userLoginInfo WHERE userAccount ='".$account."'";                         //帳號相同者
@@ -15,6 +17,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(mysqli_num_rows($result)==1 && (password_verify($password,$data["userPassword"]))){          //密碼相同
                                                                                 //儲存userAccount
         $_SESSION["userAccount"] = $data["userAccount"];
+                                                                                //setCookie
+        if(isset($_POST["setRememberLoginInfo"])){
+            function_alert("密碼已修改!");
+            setcookie("cookieUserAccount",$account,time()+60*60*24*7);
+            setcookie("cookieUserPassword",$password,time()+60*60*24*7);
+        }
                                                                                 //根據權限導引頁面
         switch($data["userPermission"]){
             case 0:                                                             //admin

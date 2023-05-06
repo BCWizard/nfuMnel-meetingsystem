@@ -23,8 +23,6 @@ function function_permissionAlert($message) {
   </script>"; 
   return false;
 }
-
-$conn=require_once "../config.php";
  
 $account=$_POST["account"];
 $password=$_POST["password"];

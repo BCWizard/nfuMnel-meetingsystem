@@ -1,10 +1,42 @@
 <?php
 session_start();
- 
-//已建立session -> 跳至user.php
+$conn=require_once "config.php";
+                                                                              //已建立cookie
+if(isset($_COOKIE["cookieUserAccount"])){
+  $password=$_COOKIE["cookieUserPassword"];
+  $sql = "SELECT * FROM userLoginInfo WHERE userAccount ='{$_COOKIE["cookieUserAccount"]}'";      //帳號相同者
+  $result=mysqli_query($conn,$sql);                                                               //connection,query(查詢字串);回傳result
+  $data = mysqli_fetch_assoc($result);
+  //if(mysqli_num_rows($result)==1 && $password==$data["userPassword"]){                          //密碼相同
+  if(mysqli_num_rows($result)==1 && (password_verify($password,$data["userPassword"]))){          //密碼相同
+                                                                              //儲存userAccount
+      $_SESSION["userAccount"] = $data["userAccount"];
+                                                                              //setCookie
+      if($setRememberLoginInfo == 1){
+          setcookie("cookieUserAccount",$account,time()+60*60*24*7);
+          setcookie("cookieUserPassword",$password,time()+60*60*24*7);
+      }
+                                                                              //根據權限導引頁面
+      switch($data["userPermission"]){
+          case 0:                                                             //admin
+              header("location:./Manager/managerUserPage.php");
+              break;
+          case 1:                                                             //teacher
+              header("location:user.php");
+              break;
+          case 2:                                                             //student
+              header("location:user.php");
+              break;
+      }
+  }else{                                                                      //密碼已修改
+      setcookie("cookieUserAccount","",time());
+      setcookie("cookieUserPassword","",time());
+      function_alert("密碼已修改!"); 
+  }
+}
+                                                                              //已建立session -> 跳至user.php
 if(isset($_SESSION["userAccount"])){
     //檢查權限
-    $conn=require_once "config.php";
     $sql = "SELECT * FROM userLoginInfo WHERE userAccount = '{$_SESSION["userAccount"]}'";          //帳號相同者
     $result=mysqli_query($conn,$sql);                                                               //connection,query(查詢字串);回傳result
     $data = mysqli_fetch_assoc($result);
@@ -23,15 +55,15 @@ if(isset($_SESSION["userAccount"])){
           function_alert("Who are you???");
           break;
   }
-
-    function function_alert($message) { 
-    // Display the alert box  
-    echo "<script>alert('$message');
-    window.location.href='loginpage.php';
-    </script>"; 
-    return false;
-    }
 }
+
+function function_alert($message) { 
+  // Display the alert box  
+  echo "<script>alert('$message');
+  window.location.href='loginpage.php';
+  </script>"; 
+  return false;
+  }
 ?>
 
 <!DOCTYPE html>
@@ -68,8 +100,8 @@ if(isset($_SESSION["userAccount"])){
                   <input type="password" class="form-control" name = "password" id="password" placeholder="密碼 / Password">
                 </div>
                 <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="check">
-                  <label class="form-check-label" for="check">記住帳密</label>
+                  <input type="checkbox" name = "setRememberLoginInfo" class="form-check-input" id="check">
+                  <label class="form-check-label" for="check">保持登入</label>
                 </div>
                 <div id="loginbtn">
                   <button type="submit" class="btn btn-primary">登入 / Login</button>
