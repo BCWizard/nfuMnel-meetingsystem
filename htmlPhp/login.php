@@ -29,10 +29,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 header("location:./Manager/managerUserPage.php");
                 break;
             case 1:                                                             //teacher
-                header("location:user.php");
+                header("location:userPage.php");
                 break;
             case 2:                                                             //student
-                header("location:user.php");
+                header("location:userPage.php");
                 break;
         }
     }else{                                                                                          //帳號或密碼錯誤
