@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2023-05-10 09:54:16
+-- 產生時間： 2023-05-10 18:37:17
 -- 伺服器版本： 10.4.27-MariaDB
 -- PHP 版本： 8.0.25
 
@@ -24,19 +24,55 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `coursecustomer`
+--
+
+CREATE TABLE `coursecustomer` (
+  `courseId` int(255) NOT NULL,
+  `courseCustomerAcc` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `courseinfo`
 --
 
 CREATE TABLE `courseinfo` (
   `courseId` int(255) NOT NULL,
   `courseName` varchar(255) NOT NULL,
-  `courseDateStart` date NOT NULL,
+  `courseDateStart` date NOT NULL DEFAULT current_timestamp(),
   `courseDateEnd` date NOT NULL,
-  `courseTimeStart` time NOT NULL,
+  `courseTimeStart` time NOT NULL DEFAULT current_timestamp(),
   `courseTimeEnd` time NOT NULL,
   `courseContent` varchar(255) NOT NULL,
   `openCourse` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- 傾印資料表的資料 `courseinfo`
+--
+
+INSERT INTO `courseinfo` (`courseId`, `courseName`, `courseDateStart`, `courseDateEnd`, `courseTimeStart`, `courseTimeEnd`, `courseContent`, `openCourse`) VALUES
+(9, '612Meeting', '2023-05-11', '2023-05-11', '00:36:00', '12:36:00', '612Meeting:專題展示，測試', 0);
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `coursemaster`
+--
+
+CREATE TABLE `coursemaster` (
+  `courseId` int(255) NOT NULL,
+  `courseMasterAcc` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- 傾印資料表的資料 `coursemaster`
+--
+
+INSERT INTO `coursemaster` (`courseId`, `courseMasterAcc`) VALUES
+(9, '40943218');
 
 -- --------------------------------------------------------
 
@@ -57,7 +93,6 @@ CREATE TABLE `userinfo` (
 --
 
 INSERT INTO `userinfo` (`userAccount`, `userName`, `userEmail`, `userClass`, `userImage`) VALUES
-('', '', '', '', NULL),
 ('40943218', '陳瑞鑫', '40943218@nfumail', 'csie3B', 'userImage/40943218.jpg'),
 ('40943220', '陳懋昕', '40943220@nfumail', 'csie3B', 'userImage/40943220.jpg'),
 ('40943257', '蘇偉勝', '40943257@nfumail', 'csie3B', 'userImage/40943257.jpg'),
@@ -81,7 +116,6 @@ CREATE TABLE `userlogininfo` (
 --
 
 INSERT INTO `userlogininfo` (`userAccount`, `userPassword`, `userPermission`) VALUES
-('', '$2y$10$ozIaj0W.2NEtRF3Vf7PfEOeBADKNnUvx5Yzd/23rx.twLT89byQHa', 0),
 ('40943218', '$2y$10$rDLlSF88UsJgKuGPSlXTHu.RJMtC8Qw2QzwxherbGZILIBAoQC15S', 2),
 ('40943220', '$2y$10$v7TG.UFcA0pCnE7IG3V.WuQdgsXIifiCXasutOOwG.PkMZqv86Tb6', 2),
 ('40943257', '$2y$10$uj9pviOyT//AbECUaXYOiezcmn1ewOZV.z2FOStK3VneZYE6svfxq', 2),
@@ -91,6 +125,24 @@ INSERT INTO `userlogininfo` (`userAccount`, `userPassword`, `userPermission`) VA
 --
 -- 已傾印資料表的索引
 --
+
+--
+-- 資料表索引 `coursecustomer`
+--
+ALTER TABLE `coursecustomer`
+  ADD PRIMARY KEY (`courseId`,`courseCustomerAcc`);
+
+--
+-- 資料表索引 `courseinfo`
+--
+ALTER TABLE `courseinfo`
+  ADD PRIMARY KEY (`courseId`);
+
+--
+-- 資料表索引 `coursemaster`
+--
+ALTER TABLE `coursemaster`
+  ADD PRIMARY KEY (`courseId`);
 
 --
 -- 資料表索引 `userinfo`
@@ -106,8 +158,30 @@ ALTER TABLE `userlogininfo`
   ADD PRIMARY KEY (`userAccount`);
 
 --
+-- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
+--
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `courseinfo`
+--
+ALTER TABLE `courseinfo`
+  MODIFY `courseId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- 已傾印資料表的限制式
 --
+
+--
+-- 資料表的限制式 `coursecustomer`
+--
+ALTER TABLE `coursecustomer`
+  ADD CONSTRAINT `coursecustomer_ibfk_1` FOREIGN KEY (`courseId`) REFERENCES `courseinfo` (`courseId`);
+
+--
+-- 資料表的限制式 `coursemaster`
+--
+ALTER TABLE `coursemaster`
+  ADD CONSTRAINT `coursemaster_ibfk_1` FOREIGN KEY (`courseId`) REFERENCES `courseinfo` (`courseId`);
 
 --
 -- 資料表的限制式 `userinfo`

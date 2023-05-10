@@ -43,7 +43,7 @@ if(isset($_SESSION["userAccount"]) == 0){
             <form method="post" action="booking.php" id="bookingForm">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">會議名稱:</span>
-                <input name="courseId" type="text" class="form-control" aria-label="Sizing example input" 
+                <input name="courseName" type="text" class="form-control" aria-label="Sizing example input" 
                         aria-describedby="inputGroup-sizing-default" placeholder="請輸入會議名稱">
               </div>
               <div class="input-group mb-3">
