@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2023-03-29 11:15:33
+-- 產生時間： 2023-05-10 09:54:16
 -- 伺服器版本： 10.4.27-MariaDB
 -- PHP 版本： 8.0.25
 
@@ -24,6 +24,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `courseinfo`
+--
+
+CREATE TABLE `courseinfo` (
+  `courseId` int(255) NOT NULL,
+  `courseName` varchar(255) NOT NULL,
+  `courseDateStart` date NOT NULL,
+  `courseDateEnd` date NOT NULL,
+  `courseTimeStart` time NOT NULL,
+  `courseTimeEnd` time NOT NULL,
+  `courseContent` varchar(255) NOT NULL,
+  `openCourse` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `userinfo`
 --
 
@@ -40,6 +57,7 @@ CREATE TABLE `userinfo` (
 --
 
 INSERT INTO `userinfo` (`userAccount`, `userName`, `userEmail`, `userClass`, `userImage`) VALUES
+('', '', '', '', NULL),
 ('40943218', '陳瑞鑫', '40943218@nfumail', 'csie3B', 'userImage/40943218.jpg'),
 ('40943220', '陳懋昕', '40943220@nfumail', 'csie3B', 'userImage/40943220.jpg'),
 ('40943257', '蘇偉勝', '40943257@nfumail', 'csie3B', 'userImage/40943257.jpg'),
@@ -63,7 +81,8 @@ CREATE TABLE `userlogininfo` (
 --
 
 INSERT INTO `userlogininfo` (`userAccount`, `userPassword`, `userPermission`) VALUES
-('40943218', '$2y$10$/i6zt5cqr.H0kQl9m.k97eB2lGQOTGV6fguFn2oJJGtMECDI.BqTC', 2),
+('', '$2y$10$ozIaj0W.2NEtRF3Vf7PfEOeBADKNnUvx5Yzd/23rx.twLT89byQHa', 0),
+('40943218', '$2y$10$rDLlSF88UsJgKuGPSlXTHu.RJMtC8Qw2QzwxherbGZILIBAoQC15S', 2),
 ('40943220', '$2y$10$v7TG.UFcA0pCnE7IG3V.WuQdgsXIifiCXasutOOwG.PkMZqv86Tb6', 2),
 ('40943257', '$2y$10$uj9pviOyT//AbECUaXYOiezcmn1ewOZV.z2FOStK3VneZYE6svfxq', 2),
 ('40943258', '$2y$10$1JlZKvlDEtVVjuB1HsfGmegAlUX1xWTd46mrIx315MiD0FakIf2W6', 2),
