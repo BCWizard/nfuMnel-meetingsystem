@@ -22,10 +22,10 @@ if(isset($_COOKIE["cookieUserAccount"])){
               header("location:./Manager/managerUserPage.php");
               break;
           case 1:                                                             //teacher
-              header("location:user.php");
+              header("location:userPage.php");
               break;
           case 2:                                                             //student
-              header("location:user.php");
+              header("location:userPage.php");
               break;
       }
   }else{                                                                      //密碼已修改
@@ -46,10 +46,10 @@ if(isset($_SESSION["userAccount"])){
           header("location:./Manager/managerUserPage.php");
           break;
       case 1:                                                             //teacher
-          header("location:user.php");
+          header("location:userPage.php");
           break;
       case 2:                                                             //student
-          header("location:user.php");
+          header("location:userPage.php");
           break;
       default:                                                            //尚未定義權限
           function_alert("Who are you???");
