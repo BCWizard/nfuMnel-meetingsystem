@@ -36,17 +36,17 @@ else{                                                   //INSERT INTO courseInfo
 }
 
                                                         //courseMaster
-$sqlCourseMaster = "INSERT INTO courseMaster (courseId,courseMasterAcc)
+$sqlCourseHost = "INSERT INTO courseHost (courseId,courseHostAcc)
         VALUES ('{$courseId}','{$_SESSION["userAccount"]}')";
         
-if(mysqli_query($conn,$sqlCourseMaster)){               //檢查INSERT INTO courseMaster
+if(mysqli_query($conn,$sqlCourseHost)){               //檢查INSERT INTO courseMaster
                                                                 //關閉 config.php->$link連線
     mysqli_close($link);
     function_alert("成功創建!");
 }
 else{                                                   //INSERT INTO courseMaster有誤
     mysqli_close($link);
-    function_alert("Insert into courseMaster ERROR!"); 
+    function_alert("Insert into courseHost ERROR!"); 
 }
                                                         //跳窗訊息 header:bookingPage.php
 function function_alert($message) { 

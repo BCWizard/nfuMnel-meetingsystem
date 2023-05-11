@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2023-05-10 18:37:17
+-- 產生時間： 2023-05-11 08:48:08
 -- 伺服器版本： 10.4.27-MariaDB
 -- PHP 版本： 8.0.25
 
@@ -24,12 +24,12 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `coursecustomer`
+-- 資料表結構 `coursehost`
 --
 
-CREATE TABLE `coursecustomer` (
+CREATE TABLE `coursehost` (
   `courseId` int(255) NOT NULL,
-  `courseCustomerAcc` varchar(255) NOT NULL
+  `courseHostAcc` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -49,30 +49,16 @@ CREATE TABLE `courseinfo` (
   `openCourse` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- 傾印資料表的資料 `courseinfo`
---
-
-INSERT INTO `courseinfo` (`courseId`, `courseName`, `courseDateStart`, `courseDateEnd`, `courseTimeStart`, `courseTimeEnd`, `courseContent`, `openCourse`) VALUES
-(9, '612Meeting', '2023-05-11', '2023-05-11', '00:36:00', '12:36:00', '612Meeting:專題展示，測試', 0);
-
 -- --------------------------------------------------------
 
 --
--- 資料表結構 `coursemaster`
+-- 資料表結構 `coursemember`
 --
 
-CREATE TABLE `coursemaster` (
+CREATE TABLE `coursemember` (
   `courseId` int(255) NOT NULL,
-  `courseMasterAcc` varchar(255) NOT NULL
+  `courseMemberAcc` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- 傾印資料表的資料 `coursemaster`
---
-
-INSERT INTO `coursemaster` (`courseId`, `courseMasterAcc`) VALUES
-(9, '40943218');
 
 -- --------------------------------------------------------
 
@@ -127,10 +113,10 @@ INSERT INTO `userlogininfo` (`userAccount`, `userPassword`, `userPermission`) VA
 --
 
 --
--- 資料表索引 `coursecustomer`
+-- 資料表索引 `coursehost`
 --
-ALTER TABLE `coursecustomer`
-  ADD PRIMARY KEY (`courseId`,`courseCustomerAcc`);
+ALTER TABLE `coursehost`
+  ADD PRIMARY KEY (`courseId`);
 
 --
 -- 資料表索引 `courseinfo`
@@ -139,10 +125,10 @@ ALTER TABLE `courseinfo`
   ADD PRIMARY KEY (`courseId`);
 
 --
--- 資料表索引 `coursemaster`
+-- 資料表索引 `coursemember`
 --
-ALTER TABLE `coursemaster`
-  ADD PRIMARY KEY (`courseId`);
+ALTER TABLE `coursemember`
+  ADD PRIMARY KEY (`courseId`,`courseMemberAcc`);
 
 --
 -- 資料表索引 `userinfo`
@@ -165,23 +151,23 @@ ALTER TABLE `userlogininfo`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `courseinfo`
 --
 ALTER TABLE `courseinfo`
-  MODIFY `courseId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `courseId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- 已傾印資料表的限制式
 --
 
 --
--- 資料表的限制式 `coursecustomer`
+-- 資料表的限制式 `coursehost`
 --
-ALTER TABLE `coursecustomer`
-  ADD CONSTRAINT `coursecustomer_ibfk_1` FOREIGN KEY (`courseId`) REFERENCES `courseinfo` (`courseId`);
+ALTER TABLE `coursehost`
+  ADD CONSTRAINT `coursehost_ibfk_1` FOREIGN KEY (`courseId`) REFERENCES `courseinfo` (`courseId`);
 
 --
--- 資料表的限制式 `coursemaster`
+-- 資料表的限制式 `coursemember`
 --
-ALTER TABLE `coursemaster`
-  ADD CONSTRAINT `coursemaster_ibfk_1` FOREIGN KEY (`courseId`) REFERENCES `courseinfo` (`courseId`);
+ALTER TABLE `coursemember`
+  ADD CONSTRAINT `coursemember_ibfk_1` FOREIGN KEY (`courseId`) REFERENCES `courseinfo` (`courseId`);
 
 --
 -- 資料表的限制式 `userinfo`
