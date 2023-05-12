@@ -74,7 +74,7 @@ function function_alert($message) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>會議系統登入頁面</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="webCSS/style.css">
+    <link rel="stylesheet" type="text/css" href="webCSS/loginPageStyle.css">
 </head>
 <body>
     <script src="js/bootstrap.min.js"></script>
