@@ -1,0 +1,31 @@
+body{
+    background-color: #cccccc; 
+}
+
+th{
+    text-align: center;
+}
+
+td{
+    text-align: center;
+}
+
+.container{
+    background-color: white;
+}
+
+.nav-link{                          /*userNav 內容置中*/
+    text-align: center;
+}
+
+#listHeader{
+    text-align: center;
+}
+
+#systemContactInfo{
+    background-color: black;
+    color:white;                  /*文字顏色*/
+    text-align: center;
+    padding: 30px;                  /*上下邊框距離*/
+    line-height: 1.8;               /*行高*/
+}

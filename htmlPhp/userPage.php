@@ -14,16 +14,21 @@ if(isset($_SESSION["userAccount"]) == 0){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>使用者主頁</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="webCSS/userPageStyle.css">
 </head>
 <body>
     <script src="js/bootstrap.min.js"></script>
     <div class="container">
+        <?php include("./includePHP/mainNav.php");?>
         <div class="row">
           <div class="col-md-2">
+            <?php include ("./includePHP/userImage.php"); ?>
             <?php include ("./includePHP/userNav.php"); ?>
           </div>
-          <div class="col-md-8">
-            <h1>歷史會議列表</h1>
+          <div class="col-md-10">
+            <h1>  
+              <p id="listHeader">歷史會議列表</p>
+            </h1>
             <table class="table table-success table-striped">
               <thead>
                 <tr>
@@ -75,7 +80,9 @@ if(isset($_SESSION["userAccount"]) == 0){
                   </tr>
               </tbody>
             </table>
-            <h1>已排定會議列表</h1>
+            <h1>  
+              <p id="listHeader">已排定會議列表</p>
+            </h1>
             <table class="table table-success table-striped accordion">
               <thead>
                 <tr>
@@ -125,10 +132,8 @@ if(isset($_SESSION["userAccount"]) == 0){
               </tbody>
             </table>
           </div>
-          <div class="col-2">
-            <?php include ("./includePHP/userImage.php"); ?>
-          </div>
         </div>
       </div>
+      <?php include("./includePHP/tail.php"); ?>
 </body>
 </html>

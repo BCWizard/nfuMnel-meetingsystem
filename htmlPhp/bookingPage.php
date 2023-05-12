@@ -20,11 +20,12 @@ if(isset($_SESSION["userAccount"]) == 0){
     <div class="container">
         <div class="row">
           <div class="col-md-2">
+          <?php include ("./includePHP/userImage.php"); ?>
             <?php include ("./includePHP/userNav.php"); ?>
           </div>
 
-          <div class="col-md-8">
-            <h1>發起會議</h1>
+          <div class="col-md-10">
+            <p class="center"><h1>發起會議</h1></p>
             <form method="post" action="booking.php" id="bookingForm">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">會議名稱:</span>
@@ -82,9 +83,6 @@ if(isset($_SESSION["userAccount"]) == 0){
                 點我創建!
               </button>
             </form>
-          </div>
-          <div class="col-2">
-            <?php include ("./includePHP/userImage.php"); ?>
           </div>
         </div>
       </div>
