@@ -82,6 +82,7 @@ function function_alert($message) {
     <div class="container">
       <div class="row">
         <img src="webImage/meeting-title.jpg" alt = "具智慧化行為分析的會議系統title" height=250>
+        <!-- https://pixabay.com/ -->
       </div>
     </div>
 
