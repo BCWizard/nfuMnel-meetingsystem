@@ -43,7 +43,7 @@ if(isset($_SESSION["userAccount"]) == 0){
               <thead>
                 <tr>
                   <th scope="col">會議名稱</th>
-                  <th scope="col">日期</th>
+                  <th scope="col">開始日期</th>
                   <th scope="col">主辦單位</th>
                   <th scope="col">主辦人</th>
                   <th scope="col">播放記錄檔</th>
@@ -95,7 +95,7 @@ if(isset($_SESSION["userAccount"]) == 0){
               <thead>
                 <tr>
                   <th scope="col">會議名稱</th>
-                  <th scope="col">日期</th>
+                  <th scope="col">開始日期</th>
                   <th scope="col">主辦單位</th>
                   <th scope="col">主辦人</th>
                   <th scope="col">參加會議</th>
