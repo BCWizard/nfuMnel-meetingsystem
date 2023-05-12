@@ -12,7 +12,7 @@ if(isset($_SESSION["userAccount"]) == 0){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>預定會議</title>
+    <title>發起會議</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 <body>
@@ -26,7 +26,7 @@ if(isset($_SESSION["userAccount"]) == 0){
                       <a class="nav-link" href="./userPage.php">回使用者主頁</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="./bookingPage.php">預定會議</a>
+                      <a class="nav-link" href="./bookingPage.php">發起會議</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="./joinPage.php">加入會議</a>
@@ -39,7 +39,7 @@ if(isset($_SESSION["userAccount"]) == 0){
           </div>
 
           <div class="col-md-8">
-            <h1>預定會議</h1>
+            <h1>發起會議</h1>
             <form method="post" action="booking.php" id="bookingForm">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">會議名稱:</span>
