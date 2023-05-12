@@ -13,7 +13,7 @@
       echo $userImagePath;
     }
   ?>
-  " class="img-fluid" alt="使用者圖片">
+  " class="img-fluid" alt="使用者圖片" style="display:block; margin:auto;">
   <?php
     echo "<p align=\"center\">Hi, {$_SESSION['userAccount']}</p>";
   ?>
