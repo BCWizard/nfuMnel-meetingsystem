@@ -78,8 +78,14 @@ function function_alert($message) {
 </head>
 <body>
     <script src="js/bootstrap.min.js"></script>
+    <div class="container">
+      <div class="row">
+        
+      </div>
+    </div>
 
     <div class="container">
+      <?php include("./includePHP/mainNav.php");?>
       <div class="row">
         <img src="webImage/meeting-title.jpg" alt = "具智慧化行為分析的會議系統title" height=250>
         <!-- https://pixabay.com/ -->
