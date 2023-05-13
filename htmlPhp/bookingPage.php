@@ -27,7 +27,9 @@ if(isset($_SESSION["userAccount"]) == 0){
         </div>
 
         <div class="col-md-10">
-          <p class="center"><h1>發起會議</h1></p>
+          <h1>
+            <p id="listHeader">發起會議</p>
+          </h1>
           <form method="post" action="booking.php" id="bookingForm">
             <div class="input-group mb-3">
               <span class="input-group-text" id="inputGroup-sizing-default">會議名稱:</span>
@@ -76,14 +78,23 @@ if(isset($_SESSION["userAccount"]) == 0){
                 </optgroup>
               </select>
             </div>
-            <div class="input-group mb-3">
-              <input name = "openCourse" type="checkbox" class="form-check-input" id="check">
-              <label class="form-check-label" for="check">是否開放給全體使用者加入會議</label>
+
+            <div class="input-group mb-3 justify-content-center">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="check">
+                <label class="form-check-label" for="check">開放給全體使用者加入會議</label>
+              </div>              
             </div>
-            <button class="btn btn-sm btn-primary btn-block btn-login input-height font16"
-              type="submit" name="建立會議">
-              點我創建!
-            </button>
+
+            <div class="input-group mb-3 justify-content-center">
+              <div id="createBtn" class="mb-3">
+                <button class="btn btn-sm btn-primary btn-block btn-login input-height font16"
+                  type="submit">
+                  點我創建!
+                </button>
+              </div>
+            </div>
+
           </form>
         </div>
       </div>

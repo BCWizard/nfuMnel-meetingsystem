@@ -16,6 +16,9 @@
     <li class="nav-item">
       <a class="nav-link" href="#">系統公告</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">使用者條約</a>
+    </li>
   </ul>
   </div>
 

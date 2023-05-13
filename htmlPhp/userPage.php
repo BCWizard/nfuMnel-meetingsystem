@@ -45,7 +45,7 @@ if(isset($_SESSION["userAccount"]) == 0){
                   <td>2022/12/12</td>
                   <td>通識教育中心</td>
                   <td>莊怡文</td>
-                  <td align="center"><button type="button" class="btn btn-outline-dark btn-sm">播放</button></td>
+                  <td><button type="button" class="btn btn-outline-dark btn-sm">播放</button></td>
                 </tr>
                 <tr class="collapse accordion-collapse" id="r1" data-bs-parent=".table">
                   <td colspan="5"> Item 1 detail .. This is the first item's accordion body. It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow. </td>
@@ -55,28 +55,28 @@ if(isset($_SESSION["userAccount"]) == 0){
                   <td>2022/12/13</td>
                   <td>語言教學中心</td>
                   <td>張敏慧</td>                 
-                  <td align="center"><button type="button" class="btn btn-outline-dark btn-sm">播放</button></td>
+                  <td><button type="button" class="btn btn-outline-dark btn-sm">播放</button></td>
                 </tr>
                 <tr class="table-success">
                     <td>通識1</td>
                     <td>2022/12/14</td>
                     <td>通識教育中心</td>
                     <td>方俊源</td>
-                    <td align="center"><button type="button" class="btn btn-outline-dark btn-sm">播放</button></td>
+                    <td><button type="button" class="btn btn-outline-dark btn-sm">播放</button></td>
                   </tr>
                   <tr class="table-danger">
                     <td>安全程式設計</td>
                     <td>2022/12/15</td>
                     <td>多媒體網路實驗室</td>
                     <td>林易泉</td>
-                    <td align="center"><button type="button" class="btn btn-outline-dark btn-sm">播放</button></td>
+                    <td><button type="button" class="btn btn-outline-dark btn-sm">播放</button></td>
                   </tr>
                   <tr class="table-warning">
                     <td>3D列印切片應用</td>
                     <td>2022/12/16</td>
                     <td>中部創新自造教育基地</td>
                     <td>DreamMaker</td>
-                    <td align="center"><button type="button" class="btn btn-outline-dark btn-sm">播放</button></td>
+                    <td><button type="button" class="btn btn-outline-dark btn-sm">播放</button></td>
                   </tr>
               </tbody>
             </table>
@@ -99,35 +99,35 @@ if(isset($_SESSION["userAccount"]) == 0){
                   <td>2022/12/26</td>
                   <td>通識教育中心</td>
                   <td>莊怡文</td>
-                  <td align="center"><button type="button" class="btn btn-outline-dark btn-sm" disabled>參加</button></td>
+                  <td><button type="button" class="btn btn-outline-dark btn-sm" disabled>參加</button></td>
                 </tr>
                 <tr class="table-secondary">
                   <td>英文(一)</td>
                   <td>2022/12/27</td>
                   <td>語言教學中心</td>
                   <td>張敏慧</td>
-                  <td align="center"><button type="button" class="btn btn-outline-dark btn-sm" disabled>參加</button></td>
+                  <td><button type="button" class="btn btn-outline-dark btn-sm" disabled>參加</button></td>
                 </tr>
                 <tr class="table-success">
                     <td>通識1</td>
                     <td>2022/12/28</td>
                     <td>通識教育中心</td>
                     <td>方俊源</td>
-                    <td align="center"><button type="button" class="btn btn-outline-dark btn-sm" disabled>參加</button></td>
+                    <td><button type="button" class="btn btn-outline-dark btn-sm" disabled>參加</button></td>
                   </tr>
                   <tr class="table-danger">
                     <td>安全程式設計</td>
                     <td>2022/12/29</td>
                     <td>多媒體網路實驗室</td>
                     <td>林易泉</td>
-                    <td align="center"><button type="button" class="btn btn-outline-dark btn-sm" disabled>參加</button></td>
+                    <td><button type="button" class="btn btn-outline-dark btn-sm" disabled>參加</button></td>
                   </tr>
                   <tr class="table-warning">
                     <td>3D列印切片應用</td>
                     <td>2022/12/30</td>
                     <td>中部創新自造教育基地</td>
                     <td>DreamMaker</td>
-                    <td align="center"><button type="button" class="btn btn-outline-dark btn-sm" disabled>參加</button></td>
+                    <td><button type="button" class="btn btn-outline-dark btn-sm" disabled>參加</button></td>
                   </tr>
               </tbody>
             </table>

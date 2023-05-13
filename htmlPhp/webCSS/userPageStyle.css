@@ -29,3 +29,7 @@ td{
     padding: 30px;                  /*上下邊框距離*/
     line-height: 1.8;               /*行高*/
 }
+
+#createBtn{
+    text-align: center;
+}
