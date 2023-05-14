@@ -26,8 +26,6 @@ td{
     background-color: black;
     color:white;                  /*文字顏色*/
     text-align: center;
-    padding: 30px;                  /*上下邊框距離*/
-    line-height: 1.8;               /*行高*/
 }
 
 #createBtn{
