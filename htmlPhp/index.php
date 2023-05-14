@@ -13,8 +13,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12" style="text-align: center;">
+                <div>
+                    <p>
+                        點擊下方的「開始使用」即代表您同意我們的
+                        <a href="/nfuMnel-meetingsystem/htmlPhp/eula.php">
+                        使用者條約
+                        </a>
+                    </p>                    
+                </div>
                 <a class="btn btn-outline-dark btn-sm" role="botton"
-                    href="./loginPage.php">開始使用!</a>
+                    href="./loginPage.php">開始使用</a>
             </div>
         </div>
     </div>
