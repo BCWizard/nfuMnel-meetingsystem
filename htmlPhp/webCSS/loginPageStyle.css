@@ -19,3 +19,7 @@ body{
 #loginbtn{
     text-align: center;             /*按鈕置中*/
 }
+
+#loginMessage{
+    text-align: center;             /*按鈕置中*/
+}

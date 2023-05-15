@@ -42,18 +42,18 @@ if(isset($_SESSION["userAccount"]) == 0){
                         aria-describedby="inputGroup-sizing-default"placeholder="請輸入會議描述"></textarea>
             </div>
             <div class="input-group mb-3">
-              <span class="input-group-text">排定開始日期:</span>
+              <span class="input-group-text">開始日期:</span>
               <input name="courseDateStart" type="date" class="form-control" aria-label="Sizing example input" 
                       aria-describedby="inputGroup-sizing-default" placeholder="請輸入會議日期">
-              <span class="input-group-text">排定開始時間:</span>
+              <span class="input-group-text">開始時間:</span>
               <input name="courseTimeStart" type="time" class="form-control" aria-label="Sizing example input" 
                       aria-describedby="inputGroup-sizing-default" placeholder="請輸入會議時間">
             </div>
             <div class="input-group mb-3">
-              <span class="input-group-text">排定結束日期:</span>
+              <span class="input-group-text">結束日期:</span>
               <input name="courseDateEnd" type="date" class="form-control" aria-label="Sizing example input" 
                       aria-describedby="inputGroup-sizing-default" placeholder="請輸入會議日期">
-              <span class="input-group-text">排定結束時間:</span>
+              <span class="input-group-text">結束時間:</span>
               <input name="courseTimeEnd" type="time" class="form-control" aria-label="Sizing example input" 
                       aria-describedby="inputGroup-sizing-default" placeholder="請輸入會議時間">
             </div>

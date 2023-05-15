@@ -18,6 +18,9 @@
     <li class="nav-item">
       <a class="nav-link" href="/nfuMnel-meetingsystem/htmlPhp/eula.php">使用者條約</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/nfuMnel-meetingsystem/htmlPhp/loginPage.php">使用者登入</a>
+    </li>
   </ul>
   </div>
 
