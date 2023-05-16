@@ -18,30 +18,34 @@ if(isset($_SESSION["userAccount"]) == 0){
 </head>
 <body>
     <script src="js/bootstrap.min.js"></script>
-    <div class="container">
-      <?php include("./includePHP/mainNav.php");?>
-      <div class="row">
-        <div class="col-md-2">
-          <?php include ("./includePHP/userImage.php"); ?>
-          <?php include ("./includePHP/userNav.php"); ?>
-        </div>
-        <div class="col-md-10">
-          <h1>
-            <p id="listHeader">
-              加入會議
-            </p>
-          </h1>
-          <div style="text-align:center;">
-            <input type="text" name="加入會議"
-                            placeholder="請輸入會議代碼/連結">
-            <button class="btn btn-sm btn-primary btn-block btn-login input-height font16"
-                    type="button" name="加入會議" onclick="location.href=''">
-                點我加入!
-            </button>
-          <div>
+    <div class="container" id="mainContainer">
+      <div class="container">
+        <?php include("./includePHP/mainNav.php");?>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2">
+            <?php include ("./includePHP/userImage.php"); ?>
+            <?php include ("./includePHP/userNav.php"); ?>
+          </div>
+          <div class="col-md-10">
+            <h1>
+              <p id="listHeader">
+                加入會議
+              </p>
+            </h1>
+            <div style="text-align:center;">
+              <input type="text" name="加入會議"
+                              placeholder="請輸入會議代碼/連結">
+              <button class="btn btn-sm btn-primary btn-block btn-login input-height font16"
+                      type="button" name="加入會議" onclick="location.href=''">
+                  點我加入!
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <?php include("./includePHP/tail.php"); ?>
+      <?php include("./includePHP/tail.php"); ?>
+    </div>    
 </body>
 </html>
