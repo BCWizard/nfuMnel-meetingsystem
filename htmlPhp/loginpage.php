@@ -74,56 +74,56 @@ function function_alert($message) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>會議系統登入頁面</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="webCSS/loginPageStyle.css">
+    <link rel="stylesheet" type="text/css" href="webCSS/userPageStyle.css">
 </head>
 <body>
     <script src="js/bootstrap.min.js"></script>
 
-    <div class="container">
-      <?php include("./includePHP/mainNav.php");?>
-      <div class="row">
-        <img src="webImage/meeting-title.jpg" alt = "具智慧化行為分析的會議系統title" height=250>
-        <!-- https://pixabay.com/ -->
+    <div class="container" id="mainContainer">
+      <div class="container">
+        <?php include("./includePHP/mainNav.php");?>
+        <div class="row">
+          <img src="webImage/meeting-title.jpg" alt = "具智慧化行為分析的會議系統title" height=250>
+          <!-- https://pixabay.com/ -->
+        </div>
       </div>
-    </div>
 
-    <div class="container">                                                               <!--max 1170px-->
-      <div class="row">
-        <div class="col-md-4">                                                          <!--992~1200px -> 使用4欄位-->    
-        </div>
-        <div class="col-md-4">
-          <form method="post" action="login.php" id="loginForm">
-              <div class="mb-3">
-                <label for="Account" class="form-label">帳號</label>
-                <input type="account" class="form-control" name = "account" id="account" placeholder="帳號 / Account">
-              </div>
-              <div class="mb-3">
-                <label for="Password" class="form-label">密碼</label>
-                <input type="password" class="form-control" name = "password" id="password" placeholder="密碼 / Password">
-              </div>
-              <div class="mb-3 form-check">
-                <input type="checkbox" name = "setRememberLoginInfo" class="form-check-input" id="check">
-                <label class="form-check-label" for="check">保持登入</label>
-              </div>
-              <div class="mb-3" id="loginMessage">
-                    <p>
-                        點擊下方的「登入」即代表您同意我們的<br>
-                        <a href="/nfuMnel-meetingsystem/htmlPhp/eula.php">
-                        使用者條約
-                        </a>
-                    </p>                    
+      <div class="container">                                                               <!--max 1170px-->
+        <div class="row">
+          <div class="col-md-4">                                                          <!--992~1200px -> 使用4欄位-->    
+          </div>
+          <div class="col-md-4">
+            <form method="post" action="login.php" id="loginForm">
+                <div class="mb-3">
+                  <label for="Account" class="form-label">帳號</label>
+                  <input type="account" class="form-control" name = "account" id="account" placeholder="帳號 / Account">
                 </div>
-              <div id="loginbtn">
-                <button type="submit" class="btn btn-primary">登入 / Login</button>
-              </div>
-          </form>
-        </div>
-        <div class="col-md-4"> 
+                <div class="mb-3">
+                  <label for="Password" class="form-label">密碼</label>
+                  <input type="password" class="form-control" name = "password" id="password" placeholder="密碼 / Password">
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" name = "setRememberLoginInfo" class="form-check-input" id="check">
+                  <label class="form-check-label" for="check">保持登入</label>
+                </div>
+                <div class="mb-3" id="loginMessage">
+                      <p>
+                          點擊下方的「登入」即代表您同意我們的<br>
+                          <a href="/nfuMnel-meetingsystem/htmlPhp/eula.php">
+                          使用者條約
+                          </a>
+                      </p>                    
+                  </div>
+                <div id="loginbtn">
+                  <button type="submit" class="btn btn-primary">登入 / Login</button>
+                </div>
+            </form>
+          </div>
+          <div class="col-md-4"> 
+          </div>
         </div>
       </div>
+      <?php include("./includePHP/tail.php"); ?>
     </div>
-    
-    <?php include("./includePHP/tail.php"); ?>
-    
 </body>
 </html>
