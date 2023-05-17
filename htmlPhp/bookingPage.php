@@ -37,7 +37,7 @@ if(isset($_SESSION["userAccount"]) == 0){
               <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">會議名稱:</span>
                 <input name="courseName" type="text" class="form-control" aria-label="Sizing example input" 
-                        aria-describedby="inputGroup-sizing-default" placeholder="請輸入會議名稱">
+                        aria-describedby="inputGroup-sizing-default" placeholder="請輸入會議名稱" required>
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text">會議描述:</span>
@@ -47,18 +47,18 @@ if(isset($_SESSION["userAccount"]) == 0){
               <div class="input-group mb-3">
                 <span class="input-group-text">開始日期:</span>
                 <input name="courseDateStart" type="date" class="form-control" aria-label="Sizing example input" 
-                        aria-describedby="inputGroup-sizing-default" placeholder="請輸入會議日期">
+                        aria-describedby="inputGroup-sizing-default" placeholder="請輸入會議日期" required>
                 <span class="input-group-text">開始時間:</span>
                 <input name="courseTimeStart" type="time" class="form-control" aria-label="Sizing example input" 
-                        aria-describedby="inputGroup-sizing-default" placeholder="請輸入會議時間">
+                        aria-describedby="inputGroup-sizing-default" placeholder="請輸入會議時間" required>
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text">結束日期:</span>
                 <input name="courseDateEnd" type="date" class="form-control" aria-label="Sizing example input" 
-                        aria-describedby="inputGroup-sizing-default" placeholder="請輸入會議日期">
+                        aria-describedby="inputGroup-sizing-default" placeholder="請輸入會議日期" required>
                 <span class="input-group-text">結束時間:</span>
                 <input name="courseTimeEnd" type="time" class="form-control" aria-label="Sizing example input" 
-                        aria-describedby="inputGroup-sizing-default" placeholder="請輸入會議時間">
+                        aria-describedby="inputGroup-sizing-default" placeholder="請輸入會議時間" required>
               </div>
               <div class="input-group mb-3">
                 <label class="input-group-text" for="inputGroupFile01">上傳會議檔案:</label>

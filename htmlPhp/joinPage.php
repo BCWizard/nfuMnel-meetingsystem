@@ -29,18 +29,22 @@ if(isset($_SESSION["userAccount"]) == 0){
             <?php include ("./includePHP/userNav.php"); ?>
           </div>
           <div class="col-md-10">
-            <h1>
-              <p id="listHeader">
-                加入會議
-              </p>
-            </h1>
-            <div style="text-align:center;">
-              <input type="text" name="加入會議"
-                              placeholder="請輸入會議代碼/連結">
-              <button class="btn btn-sm btn-primary btn-block btn-login input-height font16"
-                      type="button" name="加入會議" onclick="location.href=''">
-                  點我加入!
-              </button>
+            <div>
+              <h1>
+                <p id="listHeader">
+                  加入會議
+                </p>
+              </h1>
+              <div style="text-align:center;">
+                <form method="post" action="join.php">
+                  <input type="text" name="加入會議"
+                                  placeholder="請輸入會議代碼/連結" required>
+                  <button class="btn btn-sm btn-primary btn-block btn-login input-height font16"
+                          type="submit" name="加入會議">
+                      點我加入!
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>

@@ -90,36 +90,38 @@ function function_alert($message) {
 
       <div class="container">                                                               <!--max 1170px-->
         <div class="row">
-          <div class="col-md-4">                                                          <!--992~1200px -> 使用4欄位-->    
+          <div class="col-md-3">                                                          <!--992~1200px -> 使用4欄位-->    
           </div>
-          <div class="col-md-4">
-            <form method="post" action="login.php" id="loginForm">
-                <div class="mb-3">
-                  <label for="Account" class="form-label">帳號</label>
-                  <input type="account" class="form-control" name = "account" id="account" placeholder="帳號 / Account">
-                </div>
-                <div class="mb-3">
-                  <label for="Password" class="form-label">密碼</label>
-                  <input type="password" class="form-control" name = "password" id="password" placeholder="密碼 / Password">
-                </div>
-                <div class="mb-3 form-check">
-                  <input type="checkbox" name = "setRememberLoginInfo" class="form-check-input" id="check">
-                  <label class="form-check-label" for="check">保持登入</label>
-                </div>
-                <div class="mb-3" id="loginMessage">
-                      <p>
-                          點擊下方的「登入」即代表您同意我們的<br>
-                          <a href="/nfuMnel-meetingsystem/htmlPhp/eula.php">
-                          使用者條約
-                          </a>
-                      </p>                    
+          <div class="col-md-6">
+            <div id="loginForm">
+              <form method="post" action="login.php">
+                  <div class="mb-3">
+                    <label for="Account" class="form-label">帳號</label>
+                    <input type="account" class="form-control" name = "account" id="account" placeholder="帳號 / Account" required>
                   </div>
-                <div id="loginbtn">
-                  <button type="submit" class="btn btn-primary">登入 / Login</button>
-                </div>
-            </form>
+                  <div class="mb-3">
+                    <label for="Password" class="form-label">密碼</label>
+                    <input type="password" class="form-control" name = "password" id="password" placeholder="密碼 / Password" required>
+                  </div>
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" name = "setRememberLoginInfo" class="form-check-input" id="check">
+                    <label class="form-check-label" for="check">保持登入</label>
+                  </div>
+                  <div class="mb-3" id="loginMessage">
+                        <p>
+                            點擊下方的「登入」即代表您同意我們的<br>
+                            <a href="/nfuMnel-meetingsystem/htmlPhp/eula.php">
+                            使用者條約
+                            </a>
+                        </p>                    
+                    </div>
+                  <div id="loginbtn">
+                    <button type="submit" class="btn btn-primary">登入 / Login</button>
+                  </div>
+              </form>
+            </div>
           </div>
-          <div class="col-md-4"> 
+          <div class="col-md-3"> 
           </div>
         </div>
       </div>

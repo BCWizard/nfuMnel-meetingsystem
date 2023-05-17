@@ -38,6 +38,8 @@ td{
 }
                                                     /*loginPage*/
 #loginForm{
+    margin:0 auto;
+    max-width: 400px;
     padding: 30px;
 }
 
@@ -46,5 +48,5 @@ td{
 }
 
 #loginMessage{
-    text-align: center;             /*按鈕置中*/
+    text-align: center;             /*置中*/
 }
