@@ -22,7 +22,7 @@
         <div class="row">
           <div class="col-md-2">
             <?php include ("../includePHP/userImage.php"); ?>
-            <?php include ("../includePHP/userNav.php"); ?>
+            <?php include ("../includePHP/adminNav.php"); ?>
           </div>
 
           <div class="col-md-10">

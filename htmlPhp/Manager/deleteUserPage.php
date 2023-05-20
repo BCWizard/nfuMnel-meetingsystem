@@ -7,33 +7,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新增使用者</title>
+    <title>刪除使用者</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../webCSS/userPageStyle.css">
 </head>
 <body>
     <script src="../js/bootstrap.min.js"></script>
-    <div class="container">
+
+    <div class="container" id="mainContainer">
+      <div class="container">
+        <?php include("../includePHP/mainNav.php");?>
+      </div>
+      <div class="container">
         <div class="row">
           <div class="col-md-2">
-            <nav class="navbar justify-content-center navbar-light bg-light">
-              <ul class="navbar-nav">
-                  <li class="nav-item">
-                      <a class="nav-link" href="./managerUserPage.php">管理員頁面</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./addUserPage.php">新增使用者</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./deleteUserPage.php">刪除使用者</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="../logout.php">登出</a>
-                  </li>
-              </ul>
-            </nav>
+            <?php include ("../includePHP/userImage.php"); ?>
+            <?php include ("../includePHP/adminNav.php"); ?>
           </div>
 
-          <div class="col-md-8">
+          <div class="col-md-10">
             <h1>刪除使用者</h1>
             <form method="post" action="deleteUser.php">
                 <div class="mb-3">
@@ -43,29 +35,9 @@
                 <button type="submit" class="btn btn-danger">刪除</button>
             </form>
           </div>
-          
-          <div class="col-md-2">
-            <img src="
-            <?php
-              //$conn=require_once "../config.php";
-              $sql = "SELECT * FROM userInfo WHERE userAccount ='{$_SESSION["userAccount"]}'";
-              $result=mysqli_query($conn,$sql);                                                               //connection,query(查詢字串);回傳result
-              $data = mysqli_fetch_assoc($result);
-                                                //userInfo資料表裡是否有使用者圖片
-              if(!is_null($data["userImage"])){
-                $userImagePath = "./userImage/{$_SESSION['userAccount']}.jpg";
-                echo $userImagePath;
-              }else{                            //沒有則使用預設圖片
-                $userImagePath = "./userImage/default.jpg";
-                echo $userImagePath;
-              }
-            ?>
-            " class="img-fluid" alt="使用者圖片">
-            <?php
-              echo "Hi, {$_SESSION['userAccount']}";
-            ?>
-          </div>
         </div>
       </div>
+      <?php include("../includePHP/tail.php"); ?>
+    </div>
 </body>
 </html>
