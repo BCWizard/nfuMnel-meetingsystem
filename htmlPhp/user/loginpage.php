@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn=require_once "config.php";
+$conn=require_once "../includePHP/config.php";
                                                                               //已建立cookie
 if(isset($_COOKIE["cookieUserAccount"])){
   $password=$_COOKIE["cookieUserPassword"];
@@ -19,13 +19,13 @@ if(isset($_COOKIE["cookieUserAccount"])){
                                                                               //根據權限導引頁面
       switch($data["userPermission"]){
           case 0:                                                             //admin
-              header("location:./Manager/managerUserPage.php");
+              header("location:../Manager/managerUserPage.php");
               break;
           case 1:                                                             //teacher
-              header("location:userPage.php");
+              header("location:../user/userPage.php");
               break;
           case 2:                                                             //student
-              header("location:userPage.php");
+              header("location:../user/userPage.php");
               break;
       }
   }else{                                                                      //密碼已修改
@@ -43,13 +43,13 @@ if(isset($_SESSION["userAccount"])){
 
     switch($data["userPermission"]){
       case 0:                                                             //admin
-          header("location:./Manager/managerUserPage.php");
+          header("location:../Manager/managerUserPage.php");
           break;
       case 1:                                                             //teacher
-          header("location:userPage.php");
+          header("location:../user/userPage.php");
           break;
       case 2:                                                             //student
-          header("location:userPage.php");
+          header("location:../user/userPage.php");
           break;
       default:                                                            //尚未定義權限
           function_alert("Who are you???");
@@ -60,7 +60,7 @@ if(isset($_SESSION["userAccount"])){
 function function_alert($message) { 
   // Display the alert box  
   echo "<script>alert('$message');
-  window.location.href='loginpage.php';
+  window.location.href='../user/loginpage.php';
   </script>"; 
   return false;
   }
@@ -73,17 +73,17 @@ function function_alert($message) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>會議系統登入頁面</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="webCSS/userPageStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../webCSS/userPageStyle.css">
 </head>
 <body>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <div class="container" id="mainContainer">
       <div class="container">
-        <?php include("./includePHP/mainNav.php");?>
+        <?php include("../includePHP/mainNav.php");?>
         <div class="row">
-          <img src="webImage/meeting-title.jpg" alt = "具智慧化行為分析的會議系統title" height=250>
+          <img src="../webImage/meeting-title.jpg" alt = "具智慧化行為分析的會議系統title" height=250>
           <!-- https://pixabay.com/ -->
         </div>
       </div>
@@ -94,7 +94,7 @@ function function_alert($message) {
           </div>
           <div class="col-md-6">
             <div id="loginForm">
-              <form method="post" action="login.php">
+              <form method="post" action="../user/login.php">
                   <div class="mb-3">
                     <label for="Account" class="form-label">帳號</label>
                     <input type="account" class="form-control" name = "account" id="account" placeholder="帳號 / Account" required>
@@ -110,7 +110,7 @@ function function_alert($message) {
                   <div class="mb-3" id="loginMessage">
                         <p>
                             點擊下方的「登入」即代表您同意我們的<br>
-                            <a href="/nfuMnel-meetingsystem/htmlPhp/eula.php">
+                            <a href="../system/eula.php">
                             使用者條約
                             </a>
                         </p>                    
@@ -125,7 +125,7 @@ function function_alert($message) {
           </div>
         </div>
       </div>
-      <?php include("./includePHP/tail.php"); ?>
+      <?php include("../includePHP/tail.php"); ?>
     </div>
 </body>
 </html>

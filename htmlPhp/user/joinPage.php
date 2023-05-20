@@ -1,10 +1,5 @@
 <?php
-session_start();
-//未建立session -> 跳至loginpage.php
-if(isset($_SESSION["userAccount"]) == 0){
-    header("location: loginpage.php");
-    exit;
-}
+  include "../includePHP/checkUserPer.php";
 ?>
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
@@ -13,20 +8,20 @@ if(isset($_SESSION["userAccount"]) == 0){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>加入會議</title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="webCSS/userPageStyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../webCSS/userPageStyle.css">
 </head>
 <body>
     <script src="js/bootstrap.min.js"></script>
     <div class="container" id="mainContainer">
       <div class="container">
-        <?php include("./includePHP/mainNav.php");?>
+        <?php include("../includePHP/mainNav.php");?>
       </div>
       <div class="container">
         <div class="row">
           <div class="col-md-2">
-            <?php include ("./includePHP/userImage.php"); ?>
-            <?php include ("./includePHP/userNav.php"); ?>
+            <?php include ("../includePHP/userImage.php"); ?>
+            <?php include ("../includePHP/userNav.php"); ?>
           </div>
           <div class="col-md-10">
             <div>
@@ -36,7 +31,7 @@ if(isset($_SESSION["userAccount"]) == 0){
                 </p>
               </h1>
               <div style="text-align:center;">
-                <form method="post" action="join.php">
+                <form method="post" action="../user/join.php">
                   <input type="text" name="加入會議"
                                   placeholder="請輸入會議代碼/連結" required>
                   <button class="btn btn-sm btn-primary btn-block btn-login input-height font16"
@@ -49,7 +44,7 @@ if(isset($_SESSION["userAccount"]) == 0){
           </div>
         </div>
       </div>
-      <?php include("./includePHP/tail.php"); ?>
+      <?php include("../includePHP/tail.php"); ?>
     </div>    
 </body>
 </html>

@@ -2,10 +2,10 @@
 session_start();
 //未建立session -> 跳至loginpage.php
 if(isset($_SESSION["userAccount"]) == 0){
-    header("location: ./loginpage.php");
+    header("location: ../user/loginpage.php");
     exit;
 }
-$conn=require_once "config.php";
+$conn=require_once "../includePHP/config.php";
 
 $courseName=$_POST["courseName"];
 $courseContent=$_POST["courseContent"];
@@ -52,7 +52,7 @@ else{                                                   //INSERT INTO courseMast
 function function_alert($message) { 
     // Display the alert box  
     echo "<script>alert('$message');
-     window.location.href='bookingPage.php';
+     window.location.href='../user/bookingPage.php';
     </script>"; 
     return false;
 }

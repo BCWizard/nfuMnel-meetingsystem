@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn=require_once "config.php";
+$conn=require_once "../includePHP/config.php";
  
 $account=$_POST["account"];
 $password=$_POST["password"];
@@ -26,13 +26,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                                                                 //根據權限導引頁面
         switch($data["userPermission"]){
             case 0:                                                             //admin
-                header("location:./Manager/managerUserPage.php");
+                header("location:../Manager/managerUserPage.php");
                 break;
             case 1:                                                             //teacher
-                header("location:userPage.php");
+                header("location:../user/userPage.php");
                 break;
             case 2:                                                             //student
-                header("location:userPage.php");
+                header("location:../user/userPage.php");
                 break;
         }
     }else{                                                                                          //帳號或密碼錯誤
@@ -49,7 +49,7 @@ else{                                                                           
 function function_alert($message) { 
     // Display the alert box  
     echo "<script>alert('$message');
-     window.location.href='loginpage.php';
+     window.location.href='../user/loginpage.php';
     </script>"; 
     return false;
 }
