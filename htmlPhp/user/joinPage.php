@@ -32,10 +32,10 @@
               </h1>
               <div style="text-align:center;">
                 <form method="post" action="../user/join.php">
-                  <input type="text" name="加入會議"
-                                  placeholder="請輸入會議代碼/連結" required>
+                  <input type="text" name="joinCode"
+                                  placeholder="請輸入會議代碼" required>
                   <button class="btn btn-sm btn-primary btn-block btn-login input-height font16"
-                          type="submit" name="加入會議">
+                          type="submit">
                       點我加入!
                   </button>
                 </form>
