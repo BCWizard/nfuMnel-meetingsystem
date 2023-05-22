@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2023-05-11 08:48:08
+-- 產生時間： 2023-05-22 16:34:05
 -- 伺服器版本： 10.4.27-MariaDB
 -- PHP 版本： 8.0.25
 
@@ -71,7 +71,7 @@ CREATE TABLE `userinfo` (
   `userName` varchar(255) NOT NULL COMMENT '姓名',
   `userEmail` varchar(255) NOT NULL COMMENT '信箱',
   `userClass` varchar(255) NOT NULL COMMENT '班級',
-  `userImage` varchar(255) DEFAULT NULL COMMENT '使用者圖片'
+  `userImage` tinyint(1) DEFAULT NULL COMMENT '使用者圖片'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -79,11 +79,11 @@ CREATE TABLE `userinfo` (
 --
 
 INSERT INTO `userinfo` (`userAccount`, `userName`, `userEmail`, `userClass`, `userImage`) VALUES
-('40943218', '陳瑞鑫', '40943218@nfumail', 'csie3B', 'userImage/40943218.jpg'),
-('40943220', '陳懋昕', '40943220@nfumail', 'csie3B', 'userImage/40943220.jpg'),
-('40943257', '蘇偉勝', '40943257@nfumail', 'csie3B', 'userImage/40943257.jpg'),
-('40943258', '蘇富羿', '40943258@nfumail', 'csie3B', 'userImage/40943258.jpg'),
-('root', '管理者', 'root@nfumail', 'classRoot', NULL);
+('40943218', '陳瑞鑫', '40943218@nfumail', '3BG1', 1),
+('40943220', '陳懋昕', '40943220@nfumail', '3BG1', 1),
+('40943257', '蘇偉勝', '40943257@nfumail', '3BG1', 1),
+('40943258', '蘇富羿', '40943258@nfumail', '3BG1', 1),
+('root', '管理者', 'root@nfumail', 'classRoot', 0);
 
 -- --------------------------------------------------------
 
@@ -102,10 +102,10 @@ CREATE TABLE `userlogininfo` (
 --
 
 INSERT INTO `userlogininfo` (`userAccount`, `userPassword`, `userPermission`) VALUES
-('40943218', '$2y$10$rDLlSF88UsJgKuGPSlXTHu.RJMtC8Qw2QzwxherbGZILIBAoQC15S', 2),
-('40943220', '$2y$10$v7TG.UFcA0pCnE7IG3V.WuQdgsXIifiCXasutOOwG.PkMZqv86Tb6', 2),
-('40943257', '$2y$10$uj9pviOyT//AbECUaXYOiezcmn1ewOZV.z2FOStK3VneZYE6svfxq', 2),
-('40943258', '$2y$10$1JlZKvlDEtVVjuB1HsfGmegAlUX1xWTd46mrIx315MiD0FakIf2W6', 2),
+('40943218', '$2y$10$d.dIS8YxsTKmMWVDLNv9uueYSYLTeYvv.7JE/YA8i.IIosT7jgOMO', 2),
+('40943220', '$2y$10$s6LWeuvmDz5Qj14eOLLbpONPL.4e.U8zo1M83qhEANqqKC08YcZJq', 2),
+('40943257', '$2y$10$uYoNrF5lUpOX5Agjq.L7Y.DUMC1JbulgRLich1moi2o0QBdDetUQy', 2),
+('40943258', '$2y$10$YwDFLxAEgBhHzwIhMug21udKe9nlKc09aHX9NobM9kDly2IE7Dl4m', 2),
 ('root', '$2y$10$l0wdPVWSM2GsVzC1fZ62qOtxiUDiRxPMx27BHVrxhsMd7yash1AoO', 0);
 
 --
@@ -151,7 +151,7 @@ ALTER TABLE `userlogininfo`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `courseinfo`
 --
 ALTER TABLE `courseinfo`
-  MODIFY `courseId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `courseId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- 已傾印資料表的限制式

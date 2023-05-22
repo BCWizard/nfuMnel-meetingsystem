@@ -13,6 +13,7 @@ $courseDateStart=$_POST["courseDateStart"];
 $courseTimeStart=$_POST["courseTimeStart"];
 $courseDateEnd=$_POST["courseDateEnd"];
 $courseTimeEnd=$_POST["courseTimeEnd"];
+$courseMember=$_POST["member"];
 $openCourse = isset($_POST["openCourse"]);
                                                         //courseInfo
 $sql = "INSERT INTO courseInfo (courseName, courseDateStart, courseDateEnd, courseTimeStart, courseTimeEnd,
@@ -63,5 +64,9 @@ echo "courseName: $courseName <br>
         courseTimeStart: $courseTimeStart <br>
         courseDateEnd: $courseDateEnd <br>
         courseTimeEnd: $courseTimeEnd <br>
-        openCourse: $openCourse";
+        openCourse: $openCourse<br>";
+
+foreach ($courseMember as $value) {
+    echo $value . "<br>";
+}
 */

@@ -4,7 +4,7 @@
     $result=mysqli_query($conn,$sql);                                                               //connection,query(查詢字串);回傳result
     $data = mysqli_fetch_assoc($result);
                                       //userInfo資料表裡是否有使用者圖片
-    if(!is_null($data["userImage"])){
+    if($data["userImage"]==1){
       $userImagePath = "../userImage/{$_SESSION['userAccount']}.jpg";
       echo $userImagePath;
     }else{                            //沒有則使用預設圖片

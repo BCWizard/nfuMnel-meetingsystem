@@ -61,7 +61,7 @@
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text">載入參與名單:<br>(按住Ctrl多選)</span>
-                <select class="form-select" multiple aria-label="multiple select example">
+                <select name="member[]" class="form-select" size="10" multiple aria-label="multiple select example">
                   <optgroup label="資工系">
                     <optgroup label="資工三甲">
                       <option value="3A">資工三甲</option>

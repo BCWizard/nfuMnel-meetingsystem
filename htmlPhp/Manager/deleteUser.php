@@ -2,11 +2,11 @@
 session_start();
 //未建立session -> 跳至loginpage.php
 if(isset($_SESSION["userAccount"]) == 0){
-    header("location: ../loginpage.php");
+    header("location: ../user/loginpage.php");
     exit;
 }
 //檢查權限
-$conn=require_once "../config.php";
+$conn=require_once "../includePHP/config.php";
     $sql = "SELECT * FROM userLoginInfo WHERE userAccount = '{$_SESSION["userAccount"]}'";          //帳號相同者
     $result=mysqli_query($conn,$sql);                                                               //connection,query(查詢字串);回傳result
     $data = mysqli_fetch_assoc($result);
@@ -34,7 +34,7 @@ else{                                           //刪除userLoginInfo錯誤!
 function function_permissionAlert($message) { 
     // Display the alert box  
     echo "<script>alert('$message');
-     window.location.href='../loginpage.php';
+     window.location.href='../user/loginpage.php';
     </script>"; 
     return false;
 }
@@ -42,7 +42,7 @@ function function_permissionAlert($message) {
 function function_alert($message) { 
     // Display the alert box  
     echo "<script>alert('$message');
-     window.location.href='deleteUserPage.php';
+     window.location.href='../Manager/deleteUserPage.php';
     </script>"; 
     return false;
 }

@@ -58,8 +58,8 @@
                   <input type="text" class="form-control" name = "userClass" id="userClass" placeholder="">
                 </div>
                 <div class="mb-3">
-                <label class="form-label" for="inputGroupFile01">使用者圖片</label>
-                <input type="file" name="userImage" id="inputGroupFile01">
+                  <label class="form-label" for="inputGroupFile01">使用者圖片</label>
+                  <input type="file" name="userImage" id="inputGroupFile01">
                 </div>
                 <button type="submit" class="btn btn-primary">新增</button>
               </form>

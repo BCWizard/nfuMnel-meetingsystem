@@ -2,11 +2,11 @@
 session_start();
 //未建立session -> 跳至loginpage.php
 if(isset($_SESSION["userAccount"]) == 0){
-    header("location: ../loginpage.php");
+    header("location: ../user/loginpage.php");
     exit;
 }
 //檢查權限
-$conn=require_once "../config.php";
+$conn=require_once "../includePHP/config.php";
     $sql = "SELECT * FROM userLoginInfo WHERE userAccount = '{$_SESSION["userAccount"]}'";          //帳號相同者
     $result=mysqli_query($conn,$sql);                                                               //connection,query(查詢字串);回傳result
     $data = mysqli_fetch_assoc($result);
@@ -19,7 +19,7 @@ if(mysqli_num_rows($result)==1 && 0==$data["userPermission"]){                  
 function function_permissionAlert($message) { 
   // Display the alert box  
   echo "<script>alert('$message');
-   window.location.href='../loginpage.php';
+   window.location.href='../user/loginpage.php';
   </script>"; 
   return false;
 }
@@ -31,9 +31,9 @@ $name=$_POST["userName"];
 $mail=$_POST["userEmail"];
 $userClass=$_POST["userClass"];
 $userImagePath;
+
 //hash 19.1
 $password_hash=password_hash($_POST['password'],PASSWORD_DEFAULT);
-
 
 $sql = "INSERT INTO userlogininfo (userAccount, userPassword, userPermission) VALUES ('{$account}', '{$password_hash}', '{$premission}')";
 if(mysqli_query($conn,$sql)){               //檢查錯誤
@@ -44,12 +44,11 @@ else{                                       //有誤
 }
                                             //有使用者圖片
 if(function_saveUserImage($account)){
-    $userImagePath="userImage/{$account}.jpg";
     $sql = "INSERT INTO userinfo (userAccount, userName, userEmail, userClass, userImage) 
-                        VALUES ('{$account}', '{$name}', '{$mail}', '{$userClass}', '{$userImagePath}')";
+                        VALUES ('{$account}', '{$name}', '{$mail}', '{$userClass}', 1)";
 }else{                                      //無使用者圖片
     $sql = "INSERT INTO userinfo (userAccount, userName, userEmail, userClass, userImage) 
-                        VALUES ('{$account}', '{$name}', '{$mail}', '{$userClass}', null)";
+                        VALUES ('{$account}', '{$name}', '{$mail}', '{$userClass}', 0)";
 }
                                             //檢查錯誤
 if(mysqli_query($conn,$sql)){
@@ -65,7 +64,6 @@ if(mysqli_query($conn,$sql)){
                                                         //儲存userImage函式
 function function_saveUserImage($userImageName){
     if(!isset($_FILES['userImage']['tmp_name'])){       //沒有輸入圖片
-        echo "mkdir";
         return false;
     }
     elseif(empty($userImageName)){                     //沒有帳號提供檔名
@@ -73,14 +71,14 @@ function function_saveUserImage($userImageName){
         return false;
     }
                                                         //尚未建立userImage資料夾
-    if(!is_dir("userImage")){
+    if(!is_dir("../userImage")){
         mkdir("userImage");                             //建立userImage資料夾
         
         //if(!mkdir('userImage', 0777))die("無法建立userImage資料夾!");
     }  
     
                                                         //將userImage以$userImageName的檔名存入userImage資料夾
-    if(move_uploaded_file($_FILES['userImage']['tmp_name'], "userImage/{$userImageName}.jpg")){
+    if(move_uploaded_file($_FILES['userImage']['tmp_name'], "../userImage/{$userImageName}.jpg")){
         return true;
     }
     return false;
