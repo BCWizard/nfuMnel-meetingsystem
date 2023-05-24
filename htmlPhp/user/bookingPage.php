@@ -57,7 +57,7 @@
               </div>
               <div class="input-group mb-3">
                 <label class="input-group-text" for="inputGroupFile01">上傳會議檔案:</label>
-                <input type="file" class="form-control" id="inputGroupFile01" multiple>
+                <input type="file" class="form-control" id="inputGroupFile01">
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text">載入參與名單:<br>(按住Ctrl多選)</span>

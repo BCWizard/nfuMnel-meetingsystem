@@ -21,7 +21,7 @@
                     <p>
                         具智慧化行為分析的會議系統 MNEL-MeetingSystem End-User License Agreements<br>
 
-                        [最後更新：2023 年 5 月 21 日]<br>
+                        [最後更新：2023 年 5 月 24 日]<br>
                     </p>
                     <p>
                         為了保護 具智慧化行為分析的會議系統開發團隊（「#Team:MNEL-MeetingSystem」）和其他使用者，
@@ -124,8 +124,8 @@
                         如果對此事有管轄權的任何法院裁定本 EULA 的任何條款無效，則該條款將從本 EULA 中刪除而不影響本 EULA 的其餘部分，並且本 EULA 的其餘條款將繼續有效是有效的和可執行的。<br>
                         
                         本系統僅僅作為大學畢業專題，我們 Team:MNEL-MeetingSystem 盡可能遵守相關規範但不會承擔任何因違反上述條約或法律的責任。<br>
-                        本 EULA 僅僅只是為了練習寫 EULA 而建立，我們 Team:MNEL-MeetingSystem 不會承擔任何因違反上述條約的法律責任。<br>
-                        本 EULA 參考並改良自 RimWorld 的 EULA。<br>
+                        本 EULA 僅僅為了練習寫 EULA 而建立，我們 Team:MNEL-MeetingSystem 不會承擔任何因違反上述條約的法律責任。<br>
+                        本 EULA 參考自 RimWorld 的 EULA。<br>
                     </p>
                     EULA 結束
                 </div>
