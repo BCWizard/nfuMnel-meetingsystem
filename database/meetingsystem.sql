@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2023-05-22 16:34:05
+-- 產生時間： 2023-05-24 08:51:46
 -- 伺服器版本： 10.4.27-MariaDB
 -- PHP 版本： 8.0.25
 
@@ -32,6 +32,16 @@ CREATE TABLE `coursehost` (
   `courseHostAcc` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- 傾印資料表的資料 `coursehost`
+--
+
+INSERT INTO `coursehost` (`courseId`, `courseHostAcc`) VALUES
+(409432180, '40943218'),
+(409432181, '40943218'),
+(409432182, '40943218'),
+(409432183, '40943218');
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +59,16 @@ CREATE TABLE `courseinfo` (
   `openCourse` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- 傾印資料表的資料 `courseinfo`
+--
+
+INSERT INTO `courseinfo` (`courseId`, `courseName`, `courseDateStart`, `courseDateEnd`, `courseTimeStart`, `courseTimeEnd`, `courseContent`, `openCourse`) VALUES
+(409432180, 'name', '2023-05-24', '2023-05-24', '13:34:00', '13:34:00', 'des', 0),
+(409432181, 'name1', '2023-05-24', '2023-05-24', '13:34:00', '13:34:00', 'des1', 0),
+(409432182, 'name2', '2023-05-24', '2023-05-24', '13:34:00', '13:34:00', 'des2', 0),
+(409432183, 'name3', '2023-05-24', '2023-05-24', '13:34:00', '13:34:00', 'des3', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -57,8 +77,25 @@ CREATE TABLE `courseinfo` (
 
 CREATE TABLE `coursemember` (
   `courseId` int(255) NOT NULL,
-  `courseMemberAcc` varchar(255) NOT NULL
+  `courseMember` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- 傾印資料表的資料 `coursemember`
+--
+
+INSERT INTO `coursemember` (`courseId`, `courseMember`) VALUES
+(409432180, '3A'),
+(409432180, '3AG1'),
+(409432181, '3B'),
+(409432181, '3BG1'),
+(409432181, '3BG2'),
+(409432182, '3B'),
+(409432182, '3BG1'),
+(409432182, '3BG2'),
+(409432183, '3B'),
+(409432183, '3BG1'),
+(409432183, '3BG2');
 
 -- --------------------------------------------------------
 
@@ -71,19 +108,20 @@ CREATE TABLE `userinfo` (
   `userName` varchar(255) NOT NULL COMMENT '姓名',
   `userEmail` varchar(255) NOT NULL COMMENT '信箱',
   `userClass` varchar(255) NOT NULL COMMENT '班級',
-  `userImage` tinyint(1) DEFAULT NULL COMMENT '使用者圖片'
+  `userImage` tinyint(1) DEFAULT NULL COMMENT '使用者圖片',
+  `userCourseNumber` int(10) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- 傾印資料表的資料 `userinfo`
 --
 
-INSERT INTO `userinfo` (`userAccount`, `userName`, `userEmail`, `userClass`, `userImage`) VALUES
-('40943218', '陳瑞鑫', '40943218@nfumail', '3BG1', 1),
-('40943220', '陳懋昕', '40943220@nfumail', '3BG1', 1),
-('40943257', '蘇偉勝', '40943257@nfumail', '3BG1', 1),
-('40943258', '蘇富羿', '40943258@nfumail', '3BG1', 1),
-('root', '管理者', 'root@nfumail', 'classRoot', 0);
+INSERT INTO `userinfo` (`userAccount`, `userName`, `userEmail`, `userClass`, `userImage`, `userCourseNumber`) VALUES
+('40943218', '陳瑞鑫', '40943218@nfumail', '3BG1', 1, 4),
+('40943220', '陳懋昕', '40943220@nfumail', '3BG1', 1, 0),
+('40943257', '蘇偉勝', '40943257@nfumail', '3BG1', 1, 0),
+('40943258', '蘇富羿', '40943258@nfumail', '3BG1', 1, 0),
+('root', '管理者', 'root@nfumail', 'classRoot', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -128,7 +166,7 @@ ALTER TABLE `courseinfo`
 -- 資料表索引 `coursemember`
 --
 ALTER TABLE `coursemember`
-  ADD PRIMARY KEY (`courseId`,`courseMemberAcc`);
+  ADD PRIMARY KEY (`courseId`,`courseMember`);
 
 --
 -- 資料表索引 `userinfo`
@@ -142,16 +180,6 @@ ALTER TABLE `userinfo`
 --
 ALTER TABLE `userlogininfo`
   ADD PRIMARY KEY (`userAccount`);
-
---
--- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
---
-
---
--- 使用資料表自動遞增(AUTO_INCREMENT) `courseinfo`
---
-ALTER TABLE `courseinfo`
-  MODIFY `courseId` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- 已傾印資料表的限制式
