@@ -14,10 +14,13 @@
         <div class="row">
             <div class="col-md-12" style="text-align: center;">
                 <div>
+                    <img src="../webImage/SmartMeet.png" class="rounded float-mid" alt="SmartMeet.png">                
+                </div>
+                <div>
                     <p>
                         點擊下方的「開始使用」即代表您同意我們的
                         <a href="./eula.php">
-                        使用者條約
+                            使用者條約
                         </a>
                     </p>                    
                 </div>

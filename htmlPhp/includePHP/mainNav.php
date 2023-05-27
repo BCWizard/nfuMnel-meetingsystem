@@ -1,5 +1,8 @@
 <nav class="navbar navbar-expand-md bg-light navbar-light">
-  <a class="navbar-brand" href="../system/index.php">智會-SmartMeet</a>  <!-- Logo 放置處 -->
+  <a class="navbar-brand" href="../system/index.php">
+    <img src="../webImage/SmartMeet.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+    智會-SmartMeet
+  </a>  <!-- Logo 放置處 -->
   
   <!-- 就是當畫面縮小時，摺疊起來的按鈕圖示 -->
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#link">
