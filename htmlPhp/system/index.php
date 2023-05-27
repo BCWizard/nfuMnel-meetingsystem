@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>具智慧化行為分析的會議系統</title>
+    <title>智會-SmartMeet</title>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 </head>
 <body>

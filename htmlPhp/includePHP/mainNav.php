@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md bg-light navbar-light">
-  <a class="navbar-brand" href="../system/index.php">具智慧化行為分析的會議系統</a>  <!-- Logo 放置處 -->
+  <a class="navbar-brand" href="../system/index.php">智會-SmartMeet</a>  <!-- Logo 放置處 -->
   
   <!-- 就是當畫面縮小時，摺疊起來的按鈕圖示 -->
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#link">
@@ -18,7 +18,7 @@
         <a class="nav-link" href="../system/eula.php" id="userNavLink">使用者條約</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../user/loginPage.php" id="userNavLink">使用者登入</a>
+        <a class="nav-link" href="../user/loginPage.php" id="userNavLink">開始使用</a>
       </li>
     </ul>
   </div>

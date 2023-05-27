@@ -4,10 +4,10 @@
         <a class="nav-link" href="../user/userPage.php">回使用者主頁</a>
     </li>
     <li class="nav-item" id="userNavLink">
-        <a class="nav-link" href="">歷史會議列表</a>
+        <a class="nav-link" href="../user/HisMeetPage.php">所有歷史會議</a>
     </li>
     <li class="nav-item" id="userNavLink">
-        <a class="nav-link" href="">已排定會議列表</a>
+        <a class="nav-link" href="../user/FutMeetPage.php">所有已排定會議</a>
     </li>
     <li class="nav-item" id="userNavLink">
         <a class="nav-link" href="../user/bookingPage.php">發起會議</a>
