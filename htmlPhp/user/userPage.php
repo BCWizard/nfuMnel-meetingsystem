@@ -24,23 +24,16 @@
             <?php include ("../includePHP/userNav.php"); ?>
           </div>
           <div class="col-md-10">
-            <h1>  
-              <p id="listHeader">過往會議</p>
-            </h1>
-            <table class="table table-success table-striped align-middle">
-              <thead>
-                <tr>
-                  <th scope="col">會議名稱</th>
-                  <th scope="col">開始日期</th>
-                  <th scope="col">主辦單位</th>
-                  <th scope="col">主辦人</th>
-                  <th scope="col">播放記錄檔</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php include("../includePHP/userHisMeet.php");?>
-              </tbody>
-            </table>
+            <div style="text-align: right;">
+              <form method="post" action="../user/join.php">
+                <input type="text" name="joinCode"
+                                placeholder="請輸入會議代碼" required>
+                <button class="btn btn-sm btn-primary btn-block btn-login input-height font16"
+                        type="submit">
+                    點我加入!
+                </button>
+              </form>
+            </div>
             <h1>  
               <p id="listHeader">已排定會議</p>
             </h1>
@@ -56,6 +49,23 @@
               </thead>
               <tbody>
                 <?php include("../includePHP/userFutMeet.php");?>
+              </tbody>
+            </table>
+            <h1>  
+              <p id="listHeader">歷史會議</p>
+            </h1>
+            <table class="table table-success table-striped align-middle">
+              <thead>
+                <tr>
+                  <th scope="col">會議名稱</th>
+                  <th scope="col">開始日期</th>
+                  <th scope="col">主辦單位</th>
+                  <th scope="col">主辦人</th>
+                  <th scope="col">播放記錄檔</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php include("../includePHP/userHisMeet.php");?>
               </tbody>
             </table>
           </div>
