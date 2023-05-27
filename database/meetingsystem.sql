@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2023-05-24 08:51:46
+-- 產生時間： 2023-05-27 11:56:09
 -- 伺服器版本： 10.4.27-MariaDB
 -- PHP 版本： 8.0.25
 
@@ -64,10 +64,10 @@ CREATE TABLE `courseinfo` (
 --
 
 INSERT INTO `courseinfo` (`courseId`, `courseName`, `courseDateStart`, `courseDateEnd`, `courseTimeStart`, `courseTimeEnd`, `courseContent`, `openCourse`) VALUES
-(409432180, 'name', '2023-05-24', '2023-05-24', '13:34:00', '13:34:00', 'des', 0),
-(409432181, 'name1', '2023-05-24', '2023-05-24', '13:34:00', '13:34:00', 'des1', 0),
-(409432182, 'name2', '2023-05-24', '2023-05-24', '13:34:00', '13:34:00', 'des2', 0),
-(409432183, 'name3', '2023-05-24', '2023-05-24', '13:34:00', '13:34:00', 'des3', 0);
+(409432180, '43218Name', '2023-05-27', '2023-05-28', '16:13:00', '16:13:00', '43218Des', 0),
+(409432181, '43218Name1', '2023-05-27', '2023-05-28', '16:13:00', '16:13:00', '43218Des1', 0),
+(409432182, '43218Name2', '2023-05-27', '2023-05-28', '16:13:00', '16:13:00', '43218Des2', 0),
+(409432183, '43218Name3', '2023-05-27', '2023-05-28', '16:13:00', '16:13:00', '43218Des3', 0);
 
 -- --------------------------------------------------------
 
@@ -85,17 +85,14 @@ CREATE TABLE `coursemember` (
 --
 
 INSERT INTO `coursemember` (`courseId`, `courseMember`) VALUES
-(409432180, '3A'),
-(409432180, '3AG1'),
-(409432181, '3B'),
+(409432180, '3BG1'),
+(409432180, '40943218'),
 (409432181, '3BG1'),
-(409432181, '3BG2'),
-(409432182, '3B'),
+(409432181, '40943218'),
 (409432182, '3BG1'),
-(409432182, '3BG2'),
-(409432183, '3B'),
+(409432182, '40943218'),
 (409432183, '3BG1'),
-(409432183, '3BG2');
+(409432183, '40943218');
 
 -- --------------------------------------------------------
 
@@ -117,6 +114,18 @@ CREATE TABLE `userinfo` (
 --
 
 INSERT INTO `userinfo` (`userAccount`, `userName`, `userEmail`, `userClass`, `userImage`, `userCourseNumber`) VALUES
+('40943101', '43101Name', '40943101@nfumail', '3AG1', 0, 0),
+('40943102', '43102Name', '40943102@nfumail', '3AG1', 0, 0),
+('40943103', '43103Name', '40943103@nfumail', '3AG1', 0, 0),
+('40943104', '43104Name', '40943104@nfumail', '3AG1', 0, 0),
+('40943111', '43111Name', '40943111@nfumail', '3AG2', 0, 0),
+('40943112', '43112Name', '40943112@nfumail', '3AG2', 0, 0),
+('40943113', '43113Name', '40943113@nfumail', '3AG2', 0, 0),
+('40943114', '43114Name', '40943114@nfumail', '3AG2', 0, 0),
+('40943211', '43211Name', '40943211@nfumail', '3BG2', 0, 0),
+('40943212', '43212Name', '40943212@nfumail', '3BG2', 0, 0),
+('40943213', '43213Name', '40943213@nfumail', '3BG2', 0, 0),
+('40943214', '43214Name', '40943214@nfumail', '3BG2', 0, 0),
 ('40943218', '陳瑞鑫', '40943218@nfumail', '3BG1', 1, 4),
 ('40943220', '陳懋昕', '40943220@nfumail', '3BG1', 1, 0),
 ('40943257', '蘇偉勝', '40943257@nfumail', '3BG1', 1, 0),
@@ -140,6 +149,18 @@ CREATE TABLE `userlogininfo` (
 --
 
 INSERT INTO `userlogininfo` (`userAccount`, `userPassword`, `userPermission`) VALUES
+('40943101', '$2y$10$rjKRQ8fnYXdpwkbHp6ZWVOf.Hyr0Sxc1mufN89ZDko.MkmGHgEYfa', 2),
+('40943102', '$2y$10$0ld5By7rC1YYzKXAnxKswOZplFMJKIEVGOKCTgomQv5OFI34UizTO', 2),
+('40943103', '$2y$10$CLES8xoc8GfyLnLlsP9Xe.DL.mfvpay6gL97du0zR5vzGOks5gbK6', 2),
+('40943104', '$2y$10$lrpfqfrrM9OpkN8jFV3/0.yZzg9f5drOvmIlZcTPyFIfMU5dprD0C', 2),
+('40943111', '$2y$10$kljaszy67DRtwyWGwDFqae9.1AZqLVxdvVS2x0R4qi8zGj6T/mNq.', 2),
+('40943112', '$2y$10$Vvn4klHwD.eTZ3OsiFFVIusiqaJ2g0CJwS4/sdVRkarHmNwm9Q6ae', 2),
+('40943113', '$2y$10$hSsT/IC9SZzXeFQtfGpsNO/FtU9BWpi7pcygSDsRuXGRjGgHfdnKO', 2),
+('40943114', '$2y$10$uYCxrZN6lMBaDK27E1m4f.MZ64x663RQvBqOFxZiuBye1oloderbO', 2),
+('40943211', '$2y$10$7xWFbC6d1IWjPrHz2YQubOXb5IviPRXvcavmEPIN5LluZgIsdNcF.', 2),
+('40943212', '$2y$10$GA.wCDjH51Yj9SL7YR1uQugJorR7blZtB2/BXksWWkeEBWrSULVYq', 2),
+('40943213', '$2y$10$OBWmCOtpsP3aS8yomIfpq.2KVM64Q56Aiq.YW7Cljicu0Jcke/fom', 2),
+('40943214', '$2y$10$tgK8xi0sn2yWVSHBFKvIF.KIhzd72AJQpoRZmhy7.CbShNC1Z8xW6', 2),
 ('40943218', '$2y$10$d.dIS8YxsTKmMWVDLNv9uueYSYLTeYvv.7JE/YA8i.IIosT7jgOMO', 2),
 ('40943220', '$2y$10$s6LWeuvmDz5Qj14eOLLbpONPL.4e.U8zo1M83qhEANqqKC08YcZJq', 2),
 ('40943257', '$2y$10$uYoNrF5lUpOX5Agjq.L7Y.DUMC1JbulgRLich1moi2o0QBdDetUQy', 2),

@@ -59,6 +59,15 @@ foreach ($courseMember as $value) {
         function_alert("Insert into courseMember ERROR!"); 
     }
 }
+$sqlCourseMemberHost = "INSERT INTO courseMember (courseId,courseMember)
+    VALUES ('{$courseId}','{$userAccount}')";
+
+    if(mysqli_query($conn,$sqlCourseMemberHost)){               //檢查INSERT INTO courseMember(Host)
+    }
+    else{                                                   //INSERT INTO courseMember(Host)有誤
+        mysqli_close($link);
+        function_alert("Insert into courseMember(Host) ERROR!"); 
+    }
                                                         //courseMaster
 $sqlCourseHost = "INSERT INTO courseHost (courseId,courseHostAcc)
         VALUES ('{$courseId}','{$_SESSION["userAccount"]}')";

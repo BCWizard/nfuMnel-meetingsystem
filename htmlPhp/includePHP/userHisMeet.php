@@ -1,8 +1,38 @@
 <?php
-$sql = "SELECT * FROM userInfo WHERE userAccount ='{$_SESSION["userAccount"]}'";
-    $result=mysqli_query($conn,$sql);                                                               //connection,query(查詢字串);回傳result
-    $data = mysqli_fetch_assoc($result);
+$userClass;
+                                                                                                    //取得使用者群組
+$sqlUserInfo = "SELECT * FROM userInfo WHERE userAccount ='{$_SESSION["userAccount"]}'";
+    $userInfoResult=mysqli_query($conn,$sqlUserInfo);                                                               //connection,query(查詢字串);回傳result
+    $userClassData = mysqli_fetch_assoc($userInfoResult);
+    $userClass = $userClassData["userClass"];
+                                                                                                    //取得參加courseId
+//$sqlCourseId = "SELECT courseId FROM courseMember WHERE courseMember ='{$_SESSION['userAccount']}' OR courseMember ='{$userClass}'";
+$sqlCourseId = "SELECT courseId FROM courseMember WHERE courseMember ='{$userClass}'";
+    $courseMemberResult=mysqli_query($conn,$sqlCourseId);                                           //connection,query(查詢字串);回傳result
 
+    while ($courseMemberRow = mysqli_fetch_assoc($courseMemberResult)){
+        $sqlCourseInfo = "SELECT * FROM courseInfo INNER JOIN courseHost ON courseInfo.courseId=courseHost.courseId WHERE courseInfo.courseId ='{$courseMemberRow['courseId']}'";
+        $courseInfoResult=mysqli_query($conn,$sqlCourseInfo);
+        $courseInfoData = mysqli_fetch_assoc($courseInfoResult);
+        echo'
+            <tr data-bs-toggle="collapse" data-bs-target="#r'.$courseInfoData['courseId'].'">
+                <td>'.$courseInfoData['courseName'].'</td>
+                <td>'.$courseInfoData['courseDateStart'].'</td>
+                <td>'.$courseInfoData['courseTimeStart'].'</td>
+                <td>'.$courseInfoData['courseDateEnd'].'</td>
+                <td>'.$courseInfoData['courseTimeEnd'].'</td>
+                <td>'.$courseInfoData['courseHostAcc'].'</td>
+                <td><button type="button" class="btn btn-outline-dark btn-sm">播放</button></td>
+            </tr>
+            <tr class="collapse accordion-collapse" id="r'.$courseInfoData['courseId'].'">
+                <td colspan="7"> 
+                    '.$courseInfoData['courseContent'].'
+                </td>
+            </tr>
+        ';
+    }
+
+/*
 for($i=0;$i<5;$i++){
 echo'
     <tr data-bs-toggle="collapse" data-bs-target="#r'.$i.'">
@@ -19,3 +49,4 @@ echo'
     </tr>
 ';
 }
+*/

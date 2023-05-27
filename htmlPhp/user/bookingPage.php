@@ -64,12 +64,10 @@
                 <select name="member[]" class="form-select" size="10" multiple aria-label="multiple select example">
                   <optgroup label="資工系">
                     <optgroup label="資工三甲">
-                      <option value="3A">資工三甲</option>
                       <option value="3AG1">資工三甲第一組</option>
                       <option value="3AG2">資工三甲第二組</option>
                     </optgroup>
                     <optgroup label="資工三乙">
-                      <option value="3B">資工三乙</option>
                       <option value="3BG1">資工三乙第一組</option>
                       <option value="3BG2">資工三乙第二組</option>
                     </optgroup>

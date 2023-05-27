@@ -59,7 +59,9 @@
                 <tr>
                   <th scope="col">會議名稱</th>
                   <th scope="col">開始日期</th>
-                  <th scope="col">主辦單位</th>
+                  <th scope="col">開始時間</th>
+                  <th scope="col">結束日期</th>
+                  <th scope="col">結束時間</th>
                   <th scope="col">主辦人</th>
                   <th scope="col">播放記錄檔</th>
                 </tr>
