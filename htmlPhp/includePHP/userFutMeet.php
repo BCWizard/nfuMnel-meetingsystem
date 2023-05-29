@@ -31,7 +31,8 @@ $sqlCourseId = "SELECT courseId FROM courseMember WHERE courseMember ='{$userCla
                     <td>'.$courseInfoData['courseHostAcc'].'</td>';
                                                                                                     //根據目前時間開放會議連結
             if(strtotime($courseInfoData['courseDateStart'] . ' ' . $courseInfoData['courseTimeStart']) <= strtotime(date('Y-m-d H:i:s'))){
-                echo '<td><button type="button" class="btn btn-outline-dark btn-sm">參加</button></td>';
+                echo '<td><button type="button" class="btn btn-outline-dark btn-sm" onclick="redirectMeetingRoom(\''.$courseInfoData['courseId'].'\')">參加</button></td>';
+                //echo '<td><button type="button" class="btn btn-outline-dark btn-sm" onclick="<script>redirect(\'localhost:3000/room/'.$courseInfoData["courseId"].'\')</script>">參加</button></td>';
             }else{
                 echo '<td><button type="button" class="btn btn-outline-dark btn-sm" disabled>參加</button></td>';
             }
@@ -46,6 +47,30 @@ $sqlCourseId = "SELECT courseId FROM courseMember WHERE courseMember ='{$userCla
         }
         //*/
     }
+    echo "<script>
+                        function redirectMeetingRoom(meetingRoomCode){
+                            // 轉址函式
+                            function redirect(url) {
+                                window.location.href = url;
+                            }
+                            // 嘗試主要轉址
+                            function tryMainRedirect() {
+                                redirect('localhost:3000/room/'+meetingRoomCode);
+                            }
+                            // 備用轉址
+                            function fallbackRedirect() {
+                                alert('在嘗試3秒後無法連線至會議室!');                
+                            }
+                            // 設置轉址超時時間（以毫秒為單位）
+                            const redirectTimeout = 3000; // 3秒
+                            // 設置嘗試主要轉址的計時器
+                            const timerId = setTimeout(fallbackRedirect, redirectTimeout);
+                            // 嘗試主要轉址
+                            tryMainRedirect();
+                        }
+                        </script>";
+
+
 /*
 for($i=6;$i<11;$i++){
 echo'

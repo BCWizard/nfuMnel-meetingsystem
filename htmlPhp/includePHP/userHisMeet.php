@@ -11,10 +11,13 @@ $sqlUserInfo = "SELECT * FROM userInfo WHERE userAccount ='{$_SESSION["userAccou
 $sqlCourseId = "SELECT courseId FROM courseMember WHERE courseMember ='{$userClass}'";
     $courseMemberResult=mysqli_query($conn,$sqlCourseId);                                           //connection,query(查詢字串);回傳result
     while ($courseMemberRow = mysqli_fetch_assoc($courseMemberResult)){
-        $sqlCourseInfo = "SELECT * 
-                            FROM courseInfo INNER JOIN courseHost ON courseInfo.courseId=courseHost.courseId 
-                            WHERE courseInfo.courseId ='{$courseMemberRow['courseId']}' 
-                            ORDER BY courseInfo.courseDateEnd DESC";
+        ///*
+        $sqlCourseInfo = "SELECT *
+                            FROM courseInfo INNER JOIN courseHost ON courseInfo.courseId=courseHost.courseId
+                            WHERE courseInfo.courseId ='{$courseMemberRow['courseId']}'                       
+                            ORDER BY courseHost.courseHostAcc ASC";
+        //*/                   
+        //$sqlCourseInfo = "SELECT * from (courseInfo INNER JOIN courseHost ON courseInfo.courseId = courseHost.courseId) WHERE courseInfo.courseId ='{$courseMemberRow['courseId']}' ORDER BY courseDateEnd DESC";
         $courseInfoResult=mysqli_query($conn,$sqlCourseInfo);
         $courseInfoData = mysqli_fetch_assoc($courseInfoResult);
         //echo ($courseInfoData['courseDateEnd'] . ' ' . $courseInfoData['courseTimeEnd']).'<br>'.(date('Y-m-d H:i:s')).'<br><br>';
@@ -27,7 +30,7 @@ $sqlCourseId = "SELECT courseId FROM courseMember WHERE courseMember ='{$userCla
                     <td>'.$courseInfoData['courseDateEnd'].'</td>
                     <td>'.$courseInfoData['courseTimeEnd'].'</td>
                     <td>'.$courseInfoData['courseHostAcc'].'</td>
-                    <td><button type="button" class="btn btn-outline-dark btn-sm">播放</button></td>
+                    <td><button type="button" class="btn btn-outline-dark btn-sm" onclick="location.href=\'../Histogram.php?courseID='.$courseInfoData['courseId'].'\'">播放</button></td>
                 </tr>
                 <tr class="collapse accordion-collapse" id="r'.$courseInfoData['courseId'].'">
                     <td colspan="7"> 
