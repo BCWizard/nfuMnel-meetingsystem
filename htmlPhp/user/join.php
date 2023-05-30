@@ -20,7 +20,7 @@ else{                                                                           
 
 function function_header($joinCode,$fallJoinURL) { 
         // Display the alert box  
-        $joinURL="localhost:3000/room/$joinCode";
+        $joinURL="https://localhost:3000/room/$joinCode";
         echo 
         "<script>
             // 轉址函式

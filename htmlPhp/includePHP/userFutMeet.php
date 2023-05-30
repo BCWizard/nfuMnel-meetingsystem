@@ -55,7 +55,7 @@ $sqlCourseId = "SELECT courseId FROM courseMember WHERE courseMember ='{$userCla
                             }
                             // 嘗試主要轉址
                             function tryMainRedirect() {
-                                redirect('localhost:3000/room/'+meetingRoomCode);
+                                redirect('https://localhost:3000/room/'+meetingRoomCode);
                             }
                             // 備用轉址
                             function fallbackRedirect() {
