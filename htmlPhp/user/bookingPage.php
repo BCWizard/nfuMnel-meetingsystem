@@ -28,7 +28,7 @@
             <h1>
               <p id="listHeader">發起會議</p>
             </h1>
-            <form method="post" action="../user/booking.php" id="bookingForm">
+            <form method="post" enctype="multipart/form-data" action="../user/booking.php" id="bookingForm">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="inputGroup-sizing-default">會議名稱:</span>
                 <input name="courseName" type="text" class="form-control" aria-label="Sizing example input" 
@@ -57,7 +57,7 @@
               </div>
               <div class="input-group mb-3">
                 <label class="input-group-text" for="inputGroupFile01">上傳會議檔案:</label>
-                <input type="file" class="form-control" id="inputGroupFile01">
+                <input type="file" class="form-control" id="inputGroupFile01" name="sessionFile">
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text">載入參與名單:<br>(按住Ctrl多選)</span>

@@ -34,7 +34,16 @@ $sqlCourseId = "SELECT courseId FROM courseMember WHERE courseMember ='{$userCla
                 </tr>
                 <tr class="collapse accordion-collapse" id="r'.$courseInfoData['courseId'].'">
                     <td colspan="7"> 
-                        '.$courseInfoData['courseContent'].'
+                        '.$courseInfoData['courseContent'];
+
+                        if($courseInfoData['fileExist']==1){
+                            echo"
+                                <br>
+                                <a href=\"../sessionFile/{$courseInfoData['courseId']}.pdf\">會議檔案</a>
+                            ";
+                        }
+
+            echo'
                     </td>
                 </tr>
             ';

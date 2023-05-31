@@ -2,7 +2,9 @@
 //https://sofree.cc/php-smtp-mail/
 //https://www.php.net/manual/en/function.mail.php
 //https://github.com/Synchro/PHPMailer
-/*
+
+ini_set('SMTP','msa.hinet.net');
+ini_set('smtp_port',25);
   $to =""; //收件者
   $subject = "testMailFunction"; //信件標題
   $msg = "This is a mail for test mail function";//信件內容
@@ -12,13 +14,14 @@
    echo "成功";
   else
    echo "失敗";
-*/
+
+/*
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'phpmailer/src/Exception.php';
-require 'phpmailer/src/PHPMailer.php';
-require 'phpmailer/src/SMTP.php';
+require './phpmailer/src/Exception.php';
+require './phpmailer/src/PHPMailer.php';
+require './phpmailer/src/SMTP.php';
 
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
 try {
@@ -42,11 +45,10 @@ try {
     //$mail->addCC('cc@example.com');
     //$mail->addBCC('bcc@example.com');
 
-    /*
+
     //Attachments
-    $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-    $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
-    */
+    //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+    //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
@@ -60,3 +62,4 @@ try {
     echo 'Message could not be sent.';
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 }
+*/

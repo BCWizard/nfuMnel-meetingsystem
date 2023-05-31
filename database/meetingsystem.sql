@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2023-05-27 16:01:57
+-- 產生時間： 2023-05-31 07:30:42
 -- 伺服器版本： 10.4.27-MariaDB
 -- PHP 版本： 8.0.25
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `coursehost` (
-  `courseId` int(255) NOT NULL,
+  `courseId` varchar(255) NOT NULL,
   `courseHostAcc` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -37,10 +37,11 @@ CREATE TABLE `coursehost` (
 --
 
 INSERT INTO `coursehost` (`courseId`, `courseHostAcc`) VALUES
-(409432185, '40943218'),
-(409432200, '40943220'),
-(409432570, '40943257'),
-(409432580, '40943258');
+('409432180', '40943218'),
+('409432181', '40943218'),
+('409432200', '40943220'),
+('409432570', '40943257'),
+('409432580', '40943258');
 
 -- --------------------------------------------------------
 
@@ -49,25 +50,27 @@ INSERT INTO `coursehost` (`courseId`, `courseHostAcc`) VALUES
 --
 
 CREATE TABLE `courseinfo` (
-  `courseId` int(255) NOT NULL,
+  `courseId` varchar(255) NOT NULL,
   `courseName` varchar(255) NOT NULL,
   `courseDateStart` date NOT NULL DEFAULT current_timestamp(),
   `courseDateEnd` date NOT NULL,
   `courseTimeStart` time NOT NULL DEFAULT current_timestamp(),
   `courseTimeEnd` time NOT NULL,
   `courseContent` varchar(255) NOT NULL,
-  `openCourse` tinyint(1) NOT NULL
+  `openCourse` tinyint(1) NOT NULL,
+  `fileExist` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- 傾印資料表的資料 `courseinfo`
 --
 
-INSERT INTO `courseinfo` (`courseId`, `courseName`, `courseDateStart`, `courseDateEnd`, `courseTimeStart`, `courseTimeEnd`, `courseContent`, `openCourse`) VALUES
-(409432185, '已過往1', '2023-05-25', '2023-05-25', '08:11:00', '09:00:00', '已過往1des', 0),
-(409432200, '未來1', '2023-05-28', '2023-05-28', '14:20:00', '15:10:00', '未來1des', 0),
-(409432570, '已過往2', '2023-05-26', '2023-05-26', '09:10:00', '10:00:00', '已過往2des', 0),
-(409432580, '現在1', '2023-05-27', '2023-06-27', '21:42:00', '21:42:00', '現在1des', 0);
+INSERT INTO `courseinfo` (`courseId`, `courseName`, `courseDateStart`, `courseDateEnd`, `courseTimeStart`, `courseTimeEnd`, `courseContent`, `openCourse`, `fileExist`) VALUES
+('409432180', '已過往1', '2023-05-25', '2023-05-25', '08:00:00', '21:10:00', '已過往1des', 0, 0),
+('409432181', 'fileTest', '2023-05-31', '2023-05-31', '13:28:00', '16:28:00', 'fileTestDes', 0, 1),
+('409432200', '未來1', '2024-05-28', '2024-05-28', '14:20:00', '15:10:00', '未來1des', 0, 0),
+('409432570', '已過往2', '2023-05-26', '2023-05-26', '09:10:00', '10:00:00', '已過往2des', 0, 0),
+('409432580', '現在1', '2023-05-27', '2023-06-27', '21:42:00', '21:42:00', '現在1des', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -76,7 +79,7 @@ INSERT INTO `courseinfo` (`courseId`, `courseName`, `courseDateStart`, `courseDa
 --
 
 CREATE TABLE `coursemember` (
-  `courseId` int(255) NOT NULL,
+  `courseId` varchar(255) NOT NULL,
   `courseMember` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -85,14 +88,16 @@ CREATE TABLE `coursemember` (
 --
 
 INSERT INTO `coursemember` (`courseId`, `courseMember`) VALUES
-(409432185, '3BG1'),
-(409432185, '40943218'),
-(409432200, '3BG1'),
-(409432200, '40943220'),
-(409432570, '3BG1'),
-(409432570, '40943257'),
-(409432580, '3BG1'),
-(409432580, '40943258');
+('409432180', '3BG1'),
+('409432180', '40943218'),
+('409432181', '3BG1'),
+('409432181', '40943218'),
+('409432200', '3BG1'),
+('409432200', '40943220'),
+('409432570', '3BG1'),
+('409432570', '40943257'),
+('409432580', '3BG1'),
+('409432580', '40943258');
 
 -- --------------------------------------------------------
 
@@ -126,10 +131,10 @@ INSERT INTO `userinfo` (`userAccount`, `userName`, `userEmail`, `userClass`, `us
 ('40943212', '43212Name', '40943212@nfumail', '3BG2', 0, 0),
 ('40943213', '43213Name', '40943213@nfumail', '3BG2', 0, 0),
 ('40943214', '43214Name', '40943214@nfumail', '3BG2', 0, 0),
-('40943218', '陳瑞鑫', '40943218@nfumail', '3BG1', 1, 6),
-('40943220', '陳懋昕', '40943220@nfumail', '3BG1', 1, 1),
-('40943257', '蘇偉勝', '40943257@nfumail', '3BG1', 1, 1),
-('40943258', '蘇富羿', '40943258@nfumail', '3BG1', 1, 1),
+('40943218', '陳瑞鑫', '40943218@nfumail', '3BG1', 1, 2),
+('40943220', '陳懋昕', '40943218@nfumail', '3BG1', 1, 1),
+('40943257', '蘇偉勝', '40943218@nfumail', '3BG1', 1, 1),
+('40943258', '蘇富羿', '40943218@nfumail', '3BG1', 1, 1),
 ('root', '管理者', 'root@nfumail', 'classRoot', 0, 0);
 
 -- --------------------------------------------------------
