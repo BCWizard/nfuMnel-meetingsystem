@@ -69,15 +69,14 @@ foreach ($courseMember as $value) {
                     FROM userInfo
                     WHERE userInfo.userClass = '$value'";
     $mailResult=mysqli_query($conn,$sqlMail);
-    //$mailData = mysqli_fetch_assoc($mailResult);
     while ($mailData = mysqli_fetch_assoc($mailResult)){
-    //foreach($mailData as $mailAdd){
         ini_set('SMTP','msa.hinet.net');
         ini_set('smtp_port',25);
-        $to ="{$mailData['userEmail']}"; //收件者
-        $subject = "testMailFunction"; //信件標題
-        $msg = "This is a mail for test mail function";//信件內容
-        $headers = "From: not-replyMNELMeetingsystem@nfu.edu.tw"; //寄件者
+        $to ="{$mailData['userEmail']}";                                            //收件者
+        $subject = "邀請您參與 $userAccount 所舉辦的 $courseName !";                //信件標題
+                                                                                    //信件內容
+        $msg = "邀請您參與 {$userAccount} 所舉辦的 {$courseName} !\n舉辦時間為： {$courseDateStart} {$courseTimeStart} 到 {$courseDateEnd} {$courseTimeEnd}\n詳細資訊： {$courseContent}";
+        $headers = "From:not-replyMNELMeetingsystem@nfu.edu.tw";                    //寄件者
         
         if(!mail("$to", "$subject", "$msg", "$headers"))
             echo "寄送信件失敗";
@@ -132,7 +131,7 @@ function function_saveFile($fileName){
 function function_alert($message) { 
     // Display the alert box  
     echo "<script>alert('$message');
-     window.location.href='../user/bookingPage.php';
+        window.location.href='../user/bookingPage.php';
     </script>"; 
     return false;
 }
