@@ -44,8 +44,7 @@ if(mysqli_query($conn,$sql)){                           //檢查INSERT INTO cour
         
     }else{
         mysqli_close($link);
-        //function_alert("Insert into userInfo ERROR!"); 
-        function_alert($countCourseNumber); 
+        function_alert("Update userInfo userCourseNumber ERROR!");
     }
 }
 else{                                                   //INSERT INTO courseInfo有誤
@@ -54,22 +53,21 @@ else{                                                   //INSERT INTO courseInfo
 }
 
 foreach ($courseMember as $value) {   
-                                                        //courseMember
-    $sqlCourseMember = "INSERT INTO courseMember (courseId,courseMember)
-    VALUES ('{$courseId}','{$value}')";
-
-    if(mysqli_query($conn,$sqlCourseMember)){               //檢查INSERT INTO courseMember
-    }
-    else{                                                   //INSERT INTO courseMember有誤
-        mysqli_close($link);
-        function_alert("Insert into courseMember ERROR!"); 
-    }
-
     $sqlMail = "SELECT *
                     FROM userInfo
                     WHERE userInfo.userClass = '$value'";
     $mailResult=mysqli_query($conn,$sqlMail);
     while ($mailData = mysqli_fetch_assoc($mailResult)){
+                                                                    //courseMember
+        $sqlCourseMember = "INSERT INTO courseMember (courseId,courseMember)
+                                VALUES ('{$courseId}','{$mailData['userAccount']}')";
+        if(mysqli_query($conn,$sqlCourseMember)){               //檢查INSERT INTO courseMember
+        }
+        else{                                                   //INSERT INTO courseMember有誤
+            mysqli_close($link);
+            function_alert("Insert into courseMember ERROR!"); 
+        }
+
         ini_set('SMTP','msa.hinet.net');
         ini_set('smtp_port',25);
         $to ="{$mailData['userEmail']}";                                            //收件者
@@ -82,8 +80,9 @@ foreach ($courseMember as $value) {
             echo "寄送信件失敗";
     }
 }
+/*
 $sqlCourseMemberHost = "INSERT INTO courseMember (courseId,courseMember)
-    VALUES ('{$courseId}','{$userAccount}')";
+                            VALUES ('{$courseId}','{$userAccount}')";
 
     if(mysqli_query($conn,$sqlCourseMemberHost)){               //檢查INSERT INTO courseMember(Host)
     }
@@ -91,6 +90,7 @@ $sqlCourseMemberHost = "INSERT INTO courseMember (courseId,courseMember)
         mysqli_close($link);
         function_alert("Insert into courseMember(Host) ERROR!"); 
     }
+*/
                                                         //courseMaster
 $sqlCourseHost = "INSERT INTO courseHost (courseId,courseHostAcc)
         VALUES ('{$courseId}','{$_SESSION["userAccount"]}')";

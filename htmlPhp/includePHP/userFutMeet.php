@@ -1,14 +1,17 @@
 <?php
-$userClass;
+//$userClass;
+$userAccount=$_SESSION['userAccount'];
 date_default_timezone_set('Asia/Taipei');
+/*
                                                                                                     //取得使用者群組
 $sqlUserInfo = "SELECT * FROM userInfo WHERE userAccount ='{$_SESSION["userAccount"]}'";
     $userInfoResult=mysqli_query($conn,$sqlUserInfo);                                                               //connection,query(查詢字串);回傳result
     $userClassData = mysqli_fetch_assoc($userInfoResult);
     $userClass = $userClassData["userClass"];
+    */
                                                                                                     //取得參加courseId
 //$sqlCourseId = "SELECT courseId FROM courseMember WHERE courseMember ='{$_SESSION['userAccount']}' OR courseMember ='{$userClass}'";
-$sqlCourseId = "SELECT courseId FROM courseMember WHERE courseMember ='{$userClass}'";
+$sqlCourseId = "SELECT courseId FROM courseMember WHERE courseMember ='{$userAccount}'";
     $courseMemberResult=mysqli_query($conn,$sqlCourseId);                                           //connection,query(查詢字串);回傳result
 
     while ($courseMemberRow = mysqli_fetch_assoc($courseMemberResult)){
