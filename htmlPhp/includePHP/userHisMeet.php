@@ -28,16 +28,15 @@ $sqlCourseId = "SELECT courseId FROM courseMember WHERE courseMember ='{$userAcc
             echo'
                 <tr data-bs-toggle="collapse" data-bs-target="#r'.$courseInfoData['courseId'].'">
                     <td>'.$courseInfoData['courseName'].'</td>
-                    <td>'.$courseInfoData['courseDateStart'].'</td>
-                    <td>'.$courseInfoData['courseTimeStart'].'</td>
-                    <td>'.$courseInfoData['courseDateEnd'].'</td>
-                    <td>'.$courseInfoData['courseTimeEnd'].'</td>
+                    <td>'.$courseInfoData['courseDateStart'].'<br>'.$courseInfoData['courseTimeStart'].'</td>
+                    <td>'.$courseInfoData['courseDateEnd'].'<br>'.$courseInfoData['courseTimeEnd'].'</td>
                     <td>'.$courseInfoData['courseHostAcc'].'</td>
                     <td><button type="button" class="btn btn-outline-dark btn-sm" onclick="location.href=\'../Histogram.php?courseID='.$courseInfoData['courseId'].'\'">播放</button></td>
                 </tr>
                 <tr class="collapse accordion-collapse" id="r'.$courseInfoData['courseId'].'">
-                    <td colspan="7"> 
-                        '.$courseInfoData['courseContent'];
+                    <td colspan="5"> 
+                        會議代碼:'.$courseInfoData['courseId'].'<br>'
+                        .$courseInfoData['courseContent'];
 
                         if($courseInfoData['fileExist']==1){
                             echo"

@@ -2,7 +2,7 @@
 //https://sofree.cc/php-smtp-mail/
 //https://www.php.net/manual/en/function.mail.php
 //https://github.com/Synchro/PHPMailer
-
+/*
 ini_set('SMTP','msa.hinet.net');
 ini_set('smtp_port',25);
   $to =""; //收件者
@@ -14,8 +14,8 @@ ini_set('smtp_port',25);
    echo "成功";
   else
    echo "失敗";
-
-/*
+*/
+///*
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -28,19 +28,19 @@ try {
     //Server settings
     $mail->SMTPDebug = 2;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'nfu.edu.tw';                           // Specify main and backup SMTP servers
+    $mail->Host = 'smtp.gmail.com';                           // Specify main and backup SMTP servers
     
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = '';                                 // SMTP username
+    $mail->Username = 'mnelsmartmeet@gmail.com';                                 // SMTP username
     $mail->Password = '';                                 // SMTP password
     $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
     
     $mail->Port = 465;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('');
+    $mail->setFrom('mnelsmartmeet@gmail.com');
     //$mail->addAddress('joe@example.net', 'Joe User');     // Add a recipient
-    $mail->addAddress('');                                // Name is optional
+    $mail->addAddress('40943218@gm.nfu.edu.tw');                                // Name is optional
     //$mail->addReplyTo('info@example.com', 'Information');
     //$mail->addCC('cc@example.com');
     //$mail->addBCC('bcc@example.com');
@@ -62,4 +62,4 @@ try {
     echo 'Message could not be sent.';
     echo 'Mailer Error: ' . $mail->ErrorInfo;
 }
-*/
+//*/

@@ -27,22 +27,22 @@
             <h1>  
               <p id="listHeader">歷史會議</p>
             </h1>
-            <table class="table table-success table-striped align-middle">
-              <thead>
-                <tr>
-                  <th scope="col">會議名稱</th>
-                  <th scope="col">開始日期</th>
-                  <th scope="col">開始時間</th>
-                  <th scope="col">結束日期</th>
-                  <th scope="col">結束時間</th>
-                  <th scope="col">主辦人</th>
-                  <th scope="col">播放記錄檔</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php include("../includePHP/userHisMeet.php");?>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-success table-striped align-middle">
+                <thead>
+                  <tr>
+                    <th scope="col">會議名稱</th>
+                    <th scope="col">開始日期及時間</th>
+                    <th scope="col">結束日期及時間</th>
+                    <th scope="col">主辦人</th>
+                    <th scope="col">播放記錄檔</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <?php include("../includePHP/userHisMeet.php");?>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
