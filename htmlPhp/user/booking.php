@@ -49,6 +49,18 @@ if(function_saveFile($courseId)){
         '{$courseContent}', '{$openCourse}', 0)";
 }
 
+// 建立新資料夾路徑
+$folderPath = "../files/{$courseId}/time/";
+
+// 建立新資料夾
+if (!file_exists($folderPath)) {
+    mkdir($folderPath, 0777, true);
+}
+// 儲存起始日期和時間到 time.txt
+$data = "{$courseDateStart} {$courseTimeStart}";
+$filePath = "{$folderPath}time.txt";
+file_put_contents($filePath, $data);
+
 if(mysqli_query($conn,$sql)){                           //檢查INSERT INTO courseInfo
     $countCourseNumber++;
     $sqlInsertCourseId = "UPDATE userInfo SET userCourseNumber = $countCourseNumber where userAccount = $userAccount";
