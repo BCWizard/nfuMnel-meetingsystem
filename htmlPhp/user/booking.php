@@ -18,6 +18,17 @@ $courseMember=$_POST["member"];
 $openCourse = isset($_POST["openCourse"]);
 $courseId;
 $countCourseNumber;
+                                                        //mail
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../phpmailer/src/Exception.php';
+require '../phpmailer/src/PHPMailer.php';
+require '../phpmailer/src/SMTP.php';
+
+$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+
+
                                                         //取得courseID
 $sqlSearchCourseID ="SELECT * FROM userInfo WHERE userAccount ='{$userAccount}'";
         $result=mysqli_query($conn,$sqlSearchCourseID);     //connection,query(查詢字串);回傳result
@@ -30,6 +41,7 @@ if(function_saveFile($courseId)){
         courseContent, openCourse, fileExist)
         VALUES ('{$courseId}', '{$courseName}', '{$courseDateStart}', '{$courseDateEnd}', '{$courseTimeStart}', '{$courseTimeEnd}',
         '{$courseContent}', '{$openCourse}', 1)";
+    $mail->addAttachment("../sessionFile/{$courseId}.pdf");         // Add attachments
 }else{                                      //無檔案
     $sql = "INSERT INTO courseInfo (courseId, courseName, courseDateStart, courseDateEnd, courseTimeStart, courseTimeEnd,
         courseContent, openCourse, fileExist)
@@ -68,6 +80,8 @@ foreach ($courseMember as $value) {
             function_alert("Insert into courseMember ERROR!"); 
         }
 
+        $mail->addBCC("{$mailData['userEmail']}");
+/*
         ini_set('SMTP','msa.hinet.net');
         ini_set('smtp_port',25);
         $to ="{$mailData['userEmail']}";                                            //收件者
@@ -78,6 +92,7 @@ foreach ($courseMember as $value) {
         
         if(!mail("$to", "$subject", "$msg", "$headers"))
             echo "寄送信件失敗";
+*/
     }
 }
 /*
@@ -106,21 +121,21 @@ else{                                                   //INSERT INTO courseMast
 }
 
 function function_saveFile($fileName){
-    if(!isset($_FILES['sessionFile']['tmp_name'])){       //沒有輸入圖片
+    if(!isset($_FILES['sessionFile']['tmp_name'])){       //沒有輸入檔案
         return false;
     }
     elseif(empty($fileName)){                     //沒有帳號提供檔名
         die("產生圖片->需要會議代碼");
         return false;
     }
-                                                        //尚未建立userImage資料夾
+                                                        //尚未建立sessionFile資料夾
     if(!is_dir("../sessionFile")){
-        mkdir("sessionFile");                             //建立userImage資料夾
+        mkdir("sessionFile");                             //建立sessionFile資料夾
         
         //if(!mkdir('userImage', 0777))die("無法建立userImage資料夾!");
     }  
     
-                                                        //將userImage以$userImageName的檔名存入userImage資料夾
+                                                        //將sessionFile以$fileName的檔名存入sessionFile資料夾
     if(move_uploaded_file($_FILES['sessionFile']['tmp_name'], "../sessionFile/{$fileName}.pdf")){
         return true;
     }
@@ -134,6 +149,53 @@ function function_alert($message) {
         window.location.href='../user/bookingPage.php';
     </script>"; 
     return false;
+}
+
+try {
+    //Server settings
+    $mail->CharSet = 'UTF-8';
+
+    $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';                           // Specify main and backup SMTP servers
+    
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = 'mnelsmartmeet@gmail.com';          // SMTP username
+    $mail->Password = '';                 // SMTP password
+    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+    
+    $mail->Port = 465;                                    // TCP port to connect to
+
+    //Recipients
+    $mail->setFrom('mnelsmartmeet@gmail.com');
+    //$mail->addAddress('joe@example.net', 'Joe User');     // Add a recipient
+    //$mail->addAddress('');                                // Name is optional
+
+    //$mail->addReplyTo('info@example.com', 'Information');
+    //$mail->addCC('cc@example.com');
+    //$mail->addBCC('bcc@example.com');
+
+
+    //Attachments
+    //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+    //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+
+    //Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = "邀請您參與 {$userAccount} 所舉辦的 {$courseName} !";                //信件標題
+    $mail->Body    = "邀請您參與 {$userAccount} 所舉辦的 {$courseName} !<br>
+                        舉辦時間為： {$courseDateStart} {$courseTimeStart} 到 {$courseDateEnd} {$courseTimeEnd}<br>
+                        詳細資訊： {$courseContent}";
+    $mail->AltBody = "邀請您參與 {$userAccount} 所舉辦的 {$courseName} !\n舉辦時間為： {$courseDateStart} {$courseTimeStart} 到 {$courseDateEnd} {$courseTimeEnd}\n詳細資訊： {$courseContent}";
+    // $mail->Subject = 'testMailFunction';
+    // $mail->Body    = 'This is a mail for test mail function <b>HTML.ver</b>';
+    // $mail->AltBody = 'This is a mail for test mail function <b>non-HTML.ver</b>';
+
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo 'Message could not be sent.';
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
 }
 
 /*

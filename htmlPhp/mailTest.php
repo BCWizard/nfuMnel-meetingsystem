@@ -40,7 +40,8 @@ try {
     //Recipients
     $mail->setFrom('mnelsmartmeet@gmail.com');
     //$mail->addAddress('joe@example.net', 'Joe User');     // Add a recipient
-    $mail->addAddress('40943218@gm.nfu.edu.tw');                                // Name is optional
+    $mail->addAddress('joe@example.net');                                // Name is optional
+
     //$mail->addReplyTo('info@example.com', 'Information');
     //$mail->addCC('cc@example.com');
     //$mail->addBCC('bcc@example.com');
