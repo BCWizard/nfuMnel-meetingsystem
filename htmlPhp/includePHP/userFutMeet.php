@@ -8,7 +8,7 @@ date_default_timezone_set('Asia/Taipei');
                         INNER JOIN courseHost ON courseInfo.courseId=courseHost.courseId
                         INNER JOIN courseMember ON courseInfo.courseId = courseMember.courseId
                         WHERE courseMember.courseMember ='{$userAccount}'
-                        ORDER BY courseInfo.courseDateEnd DESC";            
+                        ORDER BY CONVERT(CONCAT(courseInfo.courseDateStart,' ',courseInfo.courseTimeStart),CHAR) ASC";            
 
     $courseInfoResult=mysqli_query($conn,$sqlCourseInfo);
 
@@ -42,6 +42,13 @@ date_default_timezone_set('Asia/Taipei');
                             echo"
                                 <br>
                                 <a href=\"../sessionFile/{$courseInfoData['courseId']}.pdf\">會議檔案</a>
+                            ";
+                        }
+                        if($courseInfoData['courseHostAcc'] === $userAccount){
+                            echo"
+                                <br>
+                                <button type=\"button\" class=\"btn btn-danger btn-sm\" onclick=\"
+                                    location.href='../Manager/deleteSession.php?courseId={$courseInfoData['courseId']}'\">刪除</button>
                             ";
                         }
             echo'                        
