@@ -142,7 +142,7 @@ function function_saveFile($fileName){
     }
                                                         //尚未建立sessionFile資料夾
     if(!is_dir("../sessionFile")){
-        mkdir("sessionFile");                             //建立sessionFile資料夾
+        mkdir("../sessionFile");                             //建立sessionFile資料夾
         
         //if(!mkdir('userImage', 0777))die("無法建立userImage資料夾!");
     }  

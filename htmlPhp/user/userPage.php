@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>使用者主頁</title>
+    <?php $title = "使用者主頁"; ?>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../webCSS/userPageStyle.css">
 </head>
@@ -65,7 +66,9 @@
                 </tr>
               </thead>
               <tbody>
-                <?php include("../includePHP/userHisMeet.php");?>
+                <?php 
+                  include("../includePHP/userHisMeet.php");
+                ?>
               </tbody>
             </table>
           </div>

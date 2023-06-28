@@ -1,30 +1,22 @@
 <?php
-//$userClass;
 $userAccount=$_SESSION['userAccount'];
 date_default_timezone_set('Asia/Taipei');
-/*
-                                                                                                    //取得使用者群組
-$sqlUserInfo = "SELECT * FROM userInfo WHERE userAccount ='{$_SESSION["userAccount"]}'";
-    $userInfoResult=mysqli_query($conn,$sqlUserInfo);                                                               //connection,query(查詢字串);回傳result
-    $userClassData = mysqli_fetch_assoc($userInfoResult);
-    $userClass = $userClassData["userClass"];
-    */
-                                                                                                    //取得參加courseId
-//$sqlCourseId = "SELECT courseId FROM courseMember WHERE courseMember ='{$_SESSION['userAccount']}' OR courseMember ='{$userClass}'";
-$sqlCourseId = "SELECT courseId FROM courseMember WHERE courseMember ='{$userAccount}'";
-    $courseMemberResult=mysqli_query($conn,$sqlCourseId);                                           //connection,query(查詢字串);回傳result
-    while ($courseMemberRow = mysqli_fetch_assoc($courseMemberResult)){
-        ///*
-        $sqlCourseInfo = "SELECT *
-                            FROM courseInfo INNER JOIN courseHost ON courseInfo.courseId=courseHost.courseId
-                            WHERE courseInfo.courseId ='{$courseMemberRow['courseId']}'                       
-                            ORDER BY courseHost.courseHostAcc ASC";
-        //*/                   
-        //$sqlCourseInfo = "SELECT * from (courseInfo INNER JOIN courseHost ON courseInfo.courseId = courseHost.courseId) WHERE courseInfo.courseId ='{$courseMemberRow['courseId']}' ORDER BY courseDateEnd DESC";
-        $courseInfoResult=mysqli_query($conn,$sqlCourseInfo);
-        $courseInfoData = mysqli_fetch_assoc($courseInfoResult);
-        //echo ($courseInfoData['courseDateEnd'] . ' ' . $courseInfoData['courseTimeEnd']).'<br>'.(date('Y-m-d H:i:s')).'<br><br>';
+
+    $sqlCourseInfo = "SELECT *
+                        FROM courseInfo 
+                        INNER JOIN courseHost ON courseInfo.courseId=courseHost.courseId
+                        INNER JOIN courseMember ON courseInfo.courseId = courseMember.courseId
+                        WHERE courseMember.courseMember ='{$userAccount}'
+                        ORDER BY courseInfo.courseDateEnd DESC";            
+
+    $courseInfoResult=mysqli_query($conn,$sqlCourseInfo);
+    
+    $countNumber = 0;
+    while($courseInfoData = mysqli_fetch_assoc($courseInfoResult)){
         if(strtotime($courseInfoData['courseDateEnd'] . ' ' . $courseInfoData['courseTimeEnd']) < strtotime(date('Y-m-d H:i:s'))){
+            $countNumber++;
+            if($countNumber >= 6)
+                break;
             echo'
                 <tr data-bs-toggle="collapse" data-bs-target="#r'.$courseInfoData['courseId'].'">
                     <td>'.$courseInfoData['courseName'].'</td>
@@ -51,22 +43,4 @@ $sqlCourseId = "SELECT courseId FROM courseMember WHERE courseMember ='{$userAcc
             ';
         }
     }
-
-/*
-for($i=0;$i<5;$i++){
-echo'
-    <tr data-bs-toggle="collapse" data-bs-target="#r'.$i.'">
-        <td>中文(一)</td>
-        <td>2022/12/12</td>
-        <td>通識教育中心</td>
-        <td>莊怡文</td>
-        <td><button type="button" class="btn btn-outline-dark btn-sm">播放</button></td>
-    </tr>
-    <tr class="collapse accordion-collapse" id="r'.$i.'">
-        <td colspan="5"> 
-        Item 1 detail .. This is the first item\'s accordion body.
-        </td>
-    </tr>
-';
-}
-*/
+        
